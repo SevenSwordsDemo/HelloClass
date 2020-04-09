@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class CommonResult implements Serializable {
 
+
     private static final long serialVersionUID = -6721531401750654362L;
     private int status;
     private String result;
