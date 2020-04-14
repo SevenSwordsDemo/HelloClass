@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface ApplyDAO extends JpaRepository<Apply, BigInteger> {
 
-    List<Apply> findByScheduleAndState(String schedule,String state);
+    List<Apply> findByScheduleAndState(String schedule, String state);
 }
