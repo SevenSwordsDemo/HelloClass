@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/HelloClass-afterend.iml" filepath="$PROJECT_DIR$/.idea/HelloClass-afterend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eclassbrand/eclassbrand.iml" filepath="$PROJECT_DIR$/eclassbrand/eclassbrand.iml" />
+    </modules>
+  </component>
+</project>
