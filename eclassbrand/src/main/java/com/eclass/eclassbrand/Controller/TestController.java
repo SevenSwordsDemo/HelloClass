@@ -2,7 +2,7 @@ package com.eclass.eclassbrand.Controller;
 
 
 import com.eclass.eclassbrand.Modal.CommonResult;
-import com.eclass.eclassbrand.Service.SampleService;
+import com.eclass.eclassbrand.Service.TestService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,13 +11,13 @@ import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/sample")
-public class SampleController {
+public class TestController {
 
     @Resource
-    private SampleService sampleService;
+    private TestService testService;
     @RequestMapping("controller")
     public CommonResult sample()
     {
-       return sampleService.sample();
+       return testService.sample();
     }
 }

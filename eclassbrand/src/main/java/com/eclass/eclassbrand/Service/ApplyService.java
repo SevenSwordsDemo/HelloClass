@@ -18,6 +18,13 @@ public class ApplyService {
     public List<Apply> viewStudentPlan(String schedule){
         List<Apply> applies = applyDAO.findByScheduleAndState("%"+schedule+"%","通过");
         return applies;
+    }
 
+    //获取申请纪录
+    public CommonResult getApply()
+    {
+        CommonResult result=new CommonResult();
+
+        return result;
     }
 }

@@ -17,8 +17,10 @@ public class Monday implements Serializable {
   private long id;
   private String tno;
   private String cno;
-  private String schedule;
+  private int start;
+  private int end;
   private String classroom;
+  private String week;
 
 
   @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
@@ -40,7 +42,6 @@ public class Monday implements Serializable {
   public Course getCourse() {
     return course;
   }
-
   public void setCourse(Course course) {
     this.course = course;
   }
@@ -48,7 +49,6 @@ public class Monday implements Serializable {
   public long getId() {
     return id;
   }
-
   public void setId(long id) {
     this.id = id;
   }
@@ -57,7 +57,6 @@ public class Monday implements Serializable {
   public String getTno() {
     return tno;
   }
-
   public void setTno(String tno) {
     this.tno = tno;
   }
@@ -66,20 +65,31 @@ public class Monday implements Serializable {
   public String getCno() {
     return cno;
   }
-
   public void setCno(String cno) {
     this.cno = cno;
   }
 
 
-  public String getSchedule() {
-    return schedule;
+  public int getStart() {
+    return start;
+  }
+  public void setStart(int start) {
+    this.start = start;
   }
 
-  public void setSchedule(String schedule) {
-    this.schedule = schedule;
+  public int getEnd() {
+    return end;
+  }
+  public void setEnd(int end) {
+    this.end = end;
   }
 
+  public String getWeek() {
+    return week;
+  }
+  public void setWeek(String week) {
+    this.week = week;
+  }
 
   public String getClassroom() {
     return classroom;

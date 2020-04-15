@@ -18,8 +18,10 @@ public class Sunday implements Serializable {
   private long id;
   private String tno;
   private String cno;
-  private String schedule;
+  private int start;
+  private int end;
   private String classroom;
+  private String week;
 
   @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
   @JoinColumn(name = "cno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
@@ -82,14 +84,29 @@ public class Sunday implements Serializable {
   }
 
 
-  public String getSchedule() {
-    return schedule;
+  public int getStart() {
+    return start;
   }
 
-  public void setSchedule(String schedule) {
-    this.schedule = schedule;
+  public void setStart(int start) {
+    this.start = start;
   }
 
+  public int getEnd() {
+    return end;
+  }
+
+  public void setEnd(int end) {
+    this.end = end;
+  }
+
+  public String getWeek() {
+    return week;
+  }
+
+  public void setWeek(String week) {
+    this.week = week;
+  }
 
   public String getClasses() {
     return classroom;

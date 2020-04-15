@@ -1,19 +1,17 @@
 package com.eclass.eclassbrand.Service;
 
-import com.eclass.eclassbrand.DAO.SampleDAO;
+import com.eclass.eclassbrand.DAO.TeacherDAO;
 import com.eclass.eclassbrand.Modal.CommonResult;
-import com.eclass.eclassbrand.POJO.Administrator;
-import com.eclass.eclassbrand.POJO.Student;
 import com.eclass.eclassbrand.POJO.Teacher;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
-public class SampleService {
-    @Resource
-    private SampleDAO sampleDAO;
+public class TestService {
 
+    @Resource
+    TeacherDAO teacherDAO;
     public CommonResult sample()
     {
         CommonResult result=new CommonResult();
@@ -24,7 +22,7 @@ public class SampleService {
             teacher.setAcademy("计算机学院");
             teacher.setTno("t123456");
             teacher.setPassword("123456");
-           sampleDAO.save(teacher);
+
         }
         catch (Exception e)
         {

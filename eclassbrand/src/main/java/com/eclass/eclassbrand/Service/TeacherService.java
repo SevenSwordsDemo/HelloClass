@@ -179,49 +179,49 @@ public class TeacherService {
         return result;
     }
 
-    //查看周一课程安排
+    //查看周一日程安排
     public CommonResult findMonday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期一";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周二课程安排
+    //查看周二日程安排
     public CommonResult findTuesday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期二";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周三课程安排
+    //查看周三日程安排
     public CommonResult findWednesday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期三";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周四课程安排
+    //查看周四日程安排
     public CommonResult findThursday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期四";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周五课程安排
+    //查看周五日程安排
     public CommonResult findFriday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期五";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周六课程安排
+    //查看周六日程安排
     public CommonResult findSaturday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期六";
         result = mergeRecord(schedule);
         return  result;
     }
-    //查看周日课程安排
+    //查看周日日程安排
     public CommonResult findSunday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期日";
