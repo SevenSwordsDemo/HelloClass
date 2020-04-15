@@ -1,5 +1,6 @@
 package com.eclass.eclassbrand.POJO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class Student implements Serializable {
     @Column(name="sno",nullable = false)
     private String sno;
     @Column(name="password",nullable = false)
+    @JsonIgnore
     private String password;
     @Column(name="name",nullable = false)
     private String name;
@@ -29,6 +31,7 @@ public class Student implements Serializable {
     @Column(name="gender",nullable = false)
     private String gender;
     @Column(name="faceInfo")
+    @JsonIgnore
     private String faceInfo;
 
 

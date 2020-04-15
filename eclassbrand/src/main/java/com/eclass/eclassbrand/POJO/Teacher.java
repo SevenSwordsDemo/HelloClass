@@ -1,5 +1,6 @@
 package com.eclass.eclassbrand.POJO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class Teacher implements Serializable {
   @Column(name="name",nullable = false)
   private String name;
   @Column(name="password",nullable = false)
+  @JsonIgnore
   private String password;
   @Column(name="gender",nullable = false)
   private String gender;

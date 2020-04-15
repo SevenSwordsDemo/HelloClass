@@ -1,5 +1,6 @@
 package com.eclass.eclassbrand.POJO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Administrator implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String account;
+    @JsonIgnore
     private String password;
 
     public Administrator() {

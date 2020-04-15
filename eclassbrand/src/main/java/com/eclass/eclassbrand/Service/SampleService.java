@@ -3,6 +3,8 @@ package com.eclass.eclassbrand.Service;
 import com.eclass.eclassbrand.DAO.SampleDAO;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Administrator;
+import com.eclass.eclassbrand.POJO.Student;
+import com.eclass.eclassbrand.POJO.Teacher;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,15 +18,13 @@ public class SampleService {
     {
         CommonResult result=new CommonResult();
         try {
-            Administrator admin =sampleDAO.getOne(1);
-            System.out.println("account:"+admin.getAccount());
-            result.setStatus(200);
-            if (admin != null) {
-                result.setData(admin);
-                result.setMsg("获取数据成功");
-            } else {
-                result.setMsg("暂无数据");
-            }
+            Teacher teacher=new Teacher();
+            teacher.setName("王重阳");
+            teacher.setGender("男");
+            teacher.setAcademy("计算机学院");
+            teacher.setTno("t123456");
+            teacher.setPassword("123456");
+           sampleDAO.save(teacher);
         }
         catch (Exception e)
         {

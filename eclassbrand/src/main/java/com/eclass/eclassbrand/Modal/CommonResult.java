@@ -6,10 +6,10 @@ public class CommonResult implements Serializable {
 
 
     private static final long serialVersionUID = -6721531401750654362L;
-    private int status;
-    private String result;
-    private String msg;
-    private Object data;
+    private int status;//状态码
+    private String result;//接口调用结果
+    private String msg;//备注信息
+    private Object data;//返回数据
 
     public CommonResult() {
         status=200;
