@@ -20,7 +20,8 @@ public class Apply implements Serializable {
   private String sno;
   @Column(name="classroom",nullable = false)
   private String classroom;
-  private String schedule;
+  private int start;
+  private int end;
   @Column(name="state")
   private String state;
   @Column(name="reason")
@@ -69,13 +70,20 @@ public class Apply implements Serializable {
     this.classroom = classroom;
   }
 
-
-  public String getSchedule() {
-    return schedule;
+  public int getStart() {
+    return start;
   }
 
-  public void setSchedule(String schedule) {
-    this.schedule = schedule;
+  public void setStart(int start) {
+    this.start = start;
+  }
+
+  public int getEnd() {
+    return end;
+  }
+
+  public void setEnd(int end) {
+    this.end = end;
   }
 
   public Timestamp getApplyTime() {
