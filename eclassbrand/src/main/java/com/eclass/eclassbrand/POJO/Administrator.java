@@ -13,7 +13,7 @@ public class Administrator implements Serializable {
     private static final long serialVersionUID = -6615059567194245149L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
     private String account;
     @JsonIgnore
     private String password;
@@ -42,7 +42,7 @@ public class Administrator implements Serializable {
         this.password = password;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 

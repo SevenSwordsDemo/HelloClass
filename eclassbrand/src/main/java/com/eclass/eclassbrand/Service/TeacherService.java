@@ -183,83 +183,83 @@ public class TeacherService {
     public CommonResult findMonday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期一";
-        result = mergeRecord(schedule);
+       // result = mergeRecord(schedule);
         return  result;
     }
     //查看周二日程安排
     public CommonResult findTuesday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期二";
-        result = mergeRecord(schedule);
+        //result = mergeRecord(schedule);
         return  result;
     }
     //查看周三日程安排
     public CommonResult findWednesday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期三";
-        result = mergeRecord(schedule);
+        //result = mergeRecord(schedule);
         return  result;
     }
     //查看周四日程安排
     public CommonResult findThursday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期四";
-        result = mergeRecord(schedule);
+       // result = mergeRecord(schedule);
         return  result;
     }
     //查看周五日程安排
     public CommonResult findFriday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期五";
-        result = mergeRecord(schedule);
+        //result = mergeRecord(schedule);
         return  result;
     }
     //查看周六日程安排
     public CommonResult findSaturday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期六";
-        result = mergeRecord(schedule);
+       // result = mergeRecord(schedule);
         return  result;
     }
     //查看周日日程安排
     public CommonResult findSunday(){
         CommonResult result=new CommonResult();
         String schedule = "第"+Variable.getWeek()+"周"+"星期日";
-        result = mergeRecord(schedule);
+       // result = mergeRecord(schedule);
         return  result;
     }
 
-    public CommonResult  mergeRecord(String schedule){
-        CommonResult result=new CommonResult();
-        List<ClassroomPlan> classroomPlans = new ArrayList<>();
-        try {
-            List<Monday> mondayList = mondayDAO.findAll();
-            List<Apply> applies = applyDAO.findByScheduleAndState(schedule,"通过");
-            if(mondayList.size()!=0 || applies.size()!=0) {
-                for(Monday m:mondayList){
-                   // ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getSchedule(),"已预约使用",m.getTeacher().getName());
-                   // classroomPlans.add(c);
-                }
-                for(Apply a:applies){
-                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getSchedule(),"已预约使用",a.getStudent().getName());
-                }
-                result.setMsg("获取教室安排成功");
-                result.setData(classroomPlans);
-            }else {
-                result.setStatus(500);
-                result.setMsg("当日无记录");
-                result.setResult("fail");
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            result.setStatus(500);
-            result.setMsg("获取教室安排失败");
-            result.setResult("fail");
-        }
-        return result;
-    }
+//    public CommonResult  mergeRecord(String schedule){
+//        CommonResult result=new CommonResult();
+//        List<ClassroomPlan> classroomPlans = new ArrayList<>();
+//        try {
+//            List<Monday> mondayList = mondayDAO.findAll();
+//            List<Apply> applies = applyDAO.findByScheduleAndState(schedule,"通过");
+//            if(mondayList.size()!=0 || applies.size()!=0) {
+//                for(Monday m:mondayList){
+//                   // ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getSchedule(),"已预约使用",m.getTeacher().getName());
+//                   // classroomPlans.add(c);
+//                }
+//                for(Apply a:applies){
+//                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getSchedule(),"已预约使用",a.getStudent().getName());
+//                }
+//                result.setMsg("获取教室安排成功");
+//                result.setData(classroomPlans);
+//            }else {
+//                result.setStatus(500);
+//                result.setMsg("当日无记录");
+//                result.setResult("fail");
+//            }
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//            result.setStatus(500);
+//            result.setMsg("获取教室安排失败");
+//            result.setResult("fail");
+//        }
+//        return result;
+//    }
 
     //按教室搜索周一安排
     public List<Monday> findByClassroom1(String classroom){

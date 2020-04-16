@@ -15,16 +15,29 @@ public class ApplyService {
     ApplyDAO applyDAO;
 
     //查询当日学生安排
-    public List<Apply> viewStudentPlan(String schedule){
-        List<Apply> applies = applyDAO.findByScheduleAndState("%"+schedule+"%","通过");
-        return applies;
-    }
+//    public List<Apply> viewStudentPlan(String schedule){
+//        List<Apply> applies = applyDAO.findByScheduleAndState("%"+schedule+"%","通过");
+//        return applies;
+//    }
 
     //获取申请纪录
     public CommonResult getApply()
     {
         CommonResult result=new CommonResult();
-
+        List<Apply> applies=applyDAO.findByState("待审核");
+        if(applies.size()==0)
+        {
+            result.setStatus(200);
+            result.setMsg("暂无申请");
+            result.setResult("success");
+        }
+        else
+        {
+            result.setStatus(200);
+            result.setResult("success");
+            result.setMsg("成功获取纪录");
+            result.setData(applies);
+        }
         return result;
     }
 }

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 @Table(name="student")
@@ -30,15 +31,19 @@ public class Student implements Serializable {
     private String classes;
     @Column(name="gender",nullable = false)
     private String gender;
+
     @Column(name="faceInfo")
     @JsonIgnore
     private String faceInfo;
 
 
+    @OneToMany(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+    @JoinColumn(name = "sid",insertable=false, updatable=false)
+    private List<Apply> applyList;
+
   public BigInteger getId() {
     return id;
   }
-
   public void setId(BigInteger id) {
     this.id = id;
   }
@@ -47,7 +52,6 @@ public class Student implements Serializable {
   public String getSno() {
     return sno;
   }
-
   public void setSno(String sno) {
     this.sno = sno;
   }
@@ -56,7 +60,6 @@ public class Student implements Serializable {
   public String getPassword() {
     return password;
   }
-
   public void setPassword(String password) {
     this.password = password;
   }
@@ -65,7 +68,6 @@ public class Student implements Serializable {
   public String getName() {
     return name;
   }
-
   public void setName(String name) {
     this.name = name;
   }
@@ -74,7 +76,6 @@ public class Student implements Serializable {
   public String getAcademy() {
     return academy;
   }
-
   public void setAcademy(String academy) {
     this.academy = academy;
   }
@@ -83,16 +84,13 @@ public class Student implements Serializable {
   public String getClasses() {
     return classes;
   }
-
-  public void setClass(String classes) {
-    this.classes = classes;
-  }
-
+  public void setClasses(String classes) {
+        this.classes = classes;
+    }
 
   public String getGender() {
     return gender;
   }
-
   public void setGender(String gender) {
     this.gender = gender;
   }
@@ -101,9 +99,16 @@ public class Student implements Serializable {
   public String getFaceInfo() {
     return faceInfo;
   }
-
   public void setFaceInfo(String faceInfo) {
     this.faceInfo = faceInfo;
   }
+
+  public List<Apply> getApplyList() {
+        return applyList;
+    }
+    public void setApplyList(List<Apply> applyList) {
+        this.applyList = applyList;
+    }
+
 
 }

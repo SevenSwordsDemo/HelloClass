@@ -5,6 +5,7 @@ import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.Service.ApplyService;
 import com.eclass.eclassbrand.Service.TeacherService;
+import com.eclass.eclassbrand.Util;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,15 +28,15 @@ public class TeacherController {
     ApplyService applyService;
 
     //任课查询
-    @RequestMapping(value = "teachcourses",method = RequestMethod.POST)
-    public CommonResult viewTeacherCourses(String tno)
-    {
-        CommonResult result = new CommonResult();
-        Date date = new Date();
-        String theday = getWeekOfDate(date);
-
-        return teacherService.myCourses(tno,theday);
-    }
+   // @RequestMapping(value = "teachcourses",method = RequestMethod.POST)
+//    public CommonResult viewTeacherCourses(String tno)
+//    {
+//        CommonResult result = new CommonResult();
+//        Date date = new Date();
+//        String theday = Util.getWeekOfDate(date);
+//
+//        //return teacherService.myCourses(tno,theday);
+//    }
 
     //签到查询
     @RequestMapping(value = "/signin",method = RequestMethod.POST)
@@ -51,7 +52,7 @@ public class TeacherController {
     {
         CommonResult result = new CommonResult();
         Date date = new Date();
-        String theday = getWeekOfDate(date);
+        String theday = Util.getWeekOfDate(date);
 
         switch (theday){
             case "Sunday":result =  teacherService.findSunday();
@@ -115,16 +116,6 @@ public class TeacherController {
     }
 
 
-
-    public String getWeekOfDate(Date date) {
-        String[] weekDays = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
-        if (w < 0)
-            w = 0;
-        return weekDays[w];
-    }
 
 
     private void sendResponse(HttpServletResponse response, String responseText)

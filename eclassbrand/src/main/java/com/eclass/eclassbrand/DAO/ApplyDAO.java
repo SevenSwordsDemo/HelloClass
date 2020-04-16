@@ -10,7 +10,10 @@ import java.math.BigInteger;
 import java.util.List;
 
 @Repository
-public interface ApplyDAO extends JpaRepository<Apply, BigInteger> {
+public interface ApplyDAO extends JpaRepository<Apply, Long> {
 
-    List<Apply> findByScheduleAndState(String schedule, String state);
+  //  List<Apply> findByScheduleAndState(String schedule, String state);
+
+    @Query(value = "select * from apply where state=?1",nativeQuery = true)
+    List<Apply> findByState(String state);
 }
