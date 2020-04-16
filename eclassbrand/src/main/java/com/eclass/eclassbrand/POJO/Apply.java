@@ -1,5 +1,6 @@
 package com.eclass.eclassbrand.POJO;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
@@ -37,6 +38,7 @@ public class Apply implements Serializable {
 
   @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH},optional = false)
   @JoinColumn(name = "sid",insertable=false, updatable=false)
+  @JsonIgnoreProperties(value = {"applyList"})
   private Student student;
 
   public Student getStudent() {

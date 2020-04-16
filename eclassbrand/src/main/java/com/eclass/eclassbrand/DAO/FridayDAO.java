@@ -11,7 +11,7 @@ public interface FridayDAO extends JpaRepository<Friday,Long> {
     //根据教楼名找安排
     public List<Friday> findByClassroomLike(String classroom);
 
-    List<Friday> findAllByOrOrderByStart();
+    List<Friday> findAllByOrderByStart();
 
     List<Friday> findByCno(String cno);
 

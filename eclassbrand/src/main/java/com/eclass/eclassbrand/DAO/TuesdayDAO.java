@@ -11,7 +11,7 @@ public interface TuesdayDAO extends JpaRepository<Tuesday, Long> {
     //根据楼名找安排
     List<Tuesday> findByClassroomLike(String classroom);
 
-    List<Tuesday> findAllByOrOrderByStart();
+    List<Tuesday> findAllByOrderByStart();
 
     //查询这门课安排
     List<Tuesday> findByCno(String cno);

@@ -11,7 +11,7 @@ public interface ThursdayDAO extends JpaRepository<Thursday,Long> {
     //根据楼名找安排
     List<Thursday> findByClassroomLike(String classroom);
 
-    List<Thursday> findAllByOrOrderByStart();
+    List<Thursday> findAllByOrderByStart();
 
     List<Thursday> findByCno(String cno);
 

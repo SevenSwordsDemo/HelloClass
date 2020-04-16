@@ -159,7 +159,7 @@ public class TeacherService {
         try {
             List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndState(week,theday,"通过");
             switch (theday){
-                case "Sunday": List<Sunday> sundayList = sundayDAO.findAllByOrOrderByStart();
+                case "Sunday": List<Sunday> sundayList = sundayDAO.findAllByOrderByStart();
                     if(sundayList.size()!=0){
                         for(Sunday m:sundayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -167,7 +167,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Monday":List<Monday> mondayList = mondayDAO.findAllByOrOrderByStart();
+                case "Monday":List<Monday> mondayList = mondayDAO.findAllByOrderByStart();
                     if(mondayList.size()!=0){
                         for(Monday m:mondayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -175,7 +175,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Tuesday":List<Tuesday> tuesdayList = tuesdayDAO.findAllByOrOrderByStart();
+                case "Tuesday":List<Tuesday> tuesdayList = tuesdayDAO.findAllByOrderByStart();
                     if(tuesdayList.size()!=0){
                         for(Tuesday m:tuesdayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -183,7 +183,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Wednesday":List<Wednesday> wednesdayList = wednesdayDAO.findAllByOrOrderByStart();
+                case "Wednesday":List<Wednesday> wednesdayList = wednesdayDAO.findAllByOrderByStart();
                     if(wednesdayList.size()!=0){
                         for(Wednesday m:wednesdayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -191,7 +191,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Thursday":List<Thursday> thursdayList = thursdayDAO.findAllByOrOrderByStart();
+                case "Thursday":List<Thursday> thursdayList = thursdayDAO.findAllByOrderByStart();
                     if(thursdayList.size()!=0){
                         for(Thursday m:thursdayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -199,7 +199,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Friday":List<Friday> fridayList = fridayDAO.findAllByOrOrderByStart();
+                case "Friday":List<Friday> fridayList = fridayDAO.findAllByOrderByStart();
                     if(fridayList.size()!=0){
                         for(Friday m:fridayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
@@ -207,7 +207,7 @@ public class TeacherService {
                         }
                     }
                     break;
-                case "Saturday":List<Saturday> saturdayList = saturdayDAO.findAllByOrOrderByStart();
+                case "Saturday":List<Saturday> saturdayList = saturdayDAO.findAllByOrderByStart();
                     if(saturdayList.size()!=0){
                         for(Saturday m:saturdayList){
                             ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());

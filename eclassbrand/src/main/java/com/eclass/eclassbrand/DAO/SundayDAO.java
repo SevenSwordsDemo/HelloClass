@@ -11,7 +11,7 @@ public interface SundayDAO extends JpaRepository<Sunday,Long> {
     //根据楼名找安排
     List<Sunday> findByClassroomLike(String classroom);
 
-    List<Sunday> findAllByOrOrderByStart();
+    List<Sunday> findAllByOrderByStart();
 
     List<Sunday> findByCno(String cno);
 
