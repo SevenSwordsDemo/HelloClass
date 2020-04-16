@@ -16,17 +16,17 @@ public class ApplyService {
     ApplyDAO applyDAO;
 
     //查询当日学生安排
-<<<<<<< Updated upstream
+
 //    public List<Apply> viewStudentPlan(String schedule){
 //        List<Apply> applies = applyDAO.findByScheduleAndState("%"+schedule+"%","通过");
 //        return applies;
 //    }
-=======
+
     public List<Apply> viewStudentPlan(String week,String date){
-        List<Apply> applies = applyDAO.findByWeekAndDateAndState(week,date,"通过");
+        List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndState(week,date,"通过");
         return applies;
     }
->>>>>>> Stashed changes
+
 
     //获取申请纪录
     public CommonResult getApply()

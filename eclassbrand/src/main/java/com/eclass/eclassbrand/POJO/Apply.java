@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,7 +18,7 @@ public class Apply implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private BigInteger id;
   @Column(name="sno",nullable = false)
-  private String sno;
+  private int sid;
   @Column(name="classroom",nullable = false)
   private String classroom;
   private int start;
@@ -30,10 +31,12 @@ public class Apply implements Serializable {
   private Timestamp applyTime;
   @Column(name = "day_of_week",nullable = false)
   private String dayOfWeek;
-  private Timestamp date;
+  private Date date;
+  private int week;
 
-  @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = Student.class)
-  @JoinColumn(name = "sno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+
+  @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH},optional = false)
+  @JoinColumn(name = "sid",insertable=false, updatable=false)
   private Student student;
 
   public Student getStudent() {
@@ -53,12 +56,12 @@ public class Apply implements Serializable {
   }
 
 
-  public String getSno() {
-    return sno;
+  public int getSid() {
+    return sid;
   }
 
-  public void setSno(String sno) {
-    this.sno = sno;
+  public void setSid(int sid) {
+    this.sid = sid;
   }
 
 
@@ -102,11 +105,11 @@ public class Apply implements Serializable {
     this.dayOfWeek = dayOfWeek;
   }
 
-  public Timestamp getDate() {
+  public Date getDate() {
     return date;
   }
 
-  public void setDate(Timestamp date) {
+  public void setDate(Date date) {
     this.date = date;
   }
 
@@ -124,5 +127,12 @@ public class Apply implements Serializable {
 
   public void setReason(String reason) {
     this.reason = reason;
+  }
+
+  public int getWeek() {
+    return week;
+  }
+  public void setWeek(int week) {
+    this.week = week;
   }
 }

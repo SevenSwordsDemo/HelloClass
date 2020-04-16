@@ -16,12 +16,8 @@ public class TestController {
 
     @Resource
     private TestService testService;
-<<<<<<< Updated upstream
-
-    @RequestMapping("controller")
-=======
     @RequestMapping(value = "controller",method = RequestMethod.GET)
->>>>>>> Stashed changes
+
     public CommonResult sample()
     {
        return testService.sample();
