@@ -24,7 +24,7 @@ public class LoginController {
 
 	//	登陆验证
 	@RequestMapping(value = {"/loginCheck"},method = RequestMethod.POST)
-	public CommonResult loginCheck( LoginCommand loginCommand)
+	public CommonResult loginCheck(LoginCommand loginCommand)
 	{
 		return loginService.loginCheck(loginCommand);
 	}

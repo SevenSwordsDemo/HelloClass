@@ -2,12 +2,10 @@ package com.eclass.eclassbrand.Service;
 
 import com.eclass.eclassbrand.DAO.*;
 import com.eclass.eclassbrand.Modal.CommonResult;
-import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +31,8 @@ public class TeacherService {
     SelectedCourseDAO selectedCourseDAO;
     @Resource
     SigninDAO signinDAO;
+    @Resource
+    TeacherService teacherService;
 
 
     //查询签到情况
@@ -73,115 +73,9 @@ public class TeacherService {
     }
 
     //任课查询
-//    public CommonResult myCourses(String tno,String theday){
-//        CommonResult result=new CommonResult();
-//        List<TeachPlan> teachPlanList = new ArrayList<>();
-//        try {
-//            switch (theday){
-//                case "Sunday":
-//                    List<Sunday> sundayList = sundayDAO.findByTno(tno);
-//                    if(sundayList.size()!=0) {
-//                        for(Sunday s:sundayList){
-//                            TeachPlan t = new TeachPlan(s.getCourse().getCname(),s.getClassroom(),s.getSchedule(),
-//                                    s.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(t);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Monday":
-//                    List<Monday> mondayList = mondayDAO.findByTno(tno);
-//                    if(mondayList.size()!=0) {
-//                        for(Monday m:mondayList){
-//                            TeachPlan t = new TeachPlan(m.getCourse().getCname(),m.getClassroom(),m.getSchedule(),
-//                                    m.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(t);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Tuesday":
-//                    List<Tuesday> tuesdayList = tuesdayDAO.findByTno(tno);
-//                    if(tuesdayList.size()!=0) {
-//                        for(Tuesday t:tuesdayList){
-//                            TeachPlan tp = new TeachPlan(t.getCourse().getCname(),t.getClassroom(),t.getSchedule(),
-//                                    t.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(tp);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Wednesday":
-//                    List<Wednesday> wednesdayList = wednesdayDAO.findByTno(tno);
-//                    if(wednesdayList.size()!=0) {
-//                        for(Wednesday w:wednesdayList){
-//                            TeachPlan t = new TeachPlan(w.getCourse().getCname(),w.getClassroom(),w.getSchedule(),
-//                                    w.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(t);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Thursday":
-//                    List<Thursday> thursdayList = thursdayDAO.findByTno(tno);
-//                    if(thursdayList.size()!=0) {
-//                        for(Thursday t:thursdayList){
-//                            TeachPlan tp = new TeachPlan(t.getCourse().getCname(),t.getClassroom(),t.getSchedule(),
-//                                    t.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(tp);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Friday":
-//                    List<Friday> fridayList = fridayDAO.findByTno(tno);
-//                    if(fridayList.size()!=0) {
-//                        for(Friday f:fridayList){
-//                            TeachPlan tp = new TeachPlan(f.getCourse().getCname(),f.getClassroom(),f.getSchedule(),
-//                                    f.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(tp);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//                case "Saturday":
-//                    List<Saturday> saturdayList = saturdayDAO.findByTno(tno);
-//                    if(saturdayList.size()!=0) {
-//                        for(Saturday s:saturdayList){
-//                            TeachPlan tp = new TeachPlan(s.getCourse().getCname(),s.getClassroom(),s.getSchedule(),
-//                                    s.getCourse().getSelectedCourses().size());
-//                            teachPlanList.add(tp);
-//                        }
-//                        result.setMsg("获取任课成功");
-//                        result.setData(teachPlanList);
-//                    }
-//                    break;
-//            }
-//            if(result.getMsg()!="获取任课成功"){
-//                result.setStatus(200);
-//                result.setMsg("无任课");
-//                result.setResult("fail");
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//            result.setStatus(500);
-//            result.setMsg("获取任课失败");
-//            result.setResult("fail");
-//        }
-//        return result;
-//    }
-
-    //查看周一日程安排
-    public CommonResult findMonday(){
+    public CommonResult myCourses(String tno,String theday){
         CommonResult result=new CommonResult();
+<<<<<<< Updated upstream
         String schedule = "第"+Variable.getWeek()+"周"+"星期一";
        // result = mergeRecord(schedule);
         return  result;
@@ -220,10 +114,116 @@ public class TeacherService {
         String schedule = "第"+Variable.getWeek()+"周"+"星期六";
        // result = mergeRecord(schedule);
         return  result;
+=======
+        List<TeachPlan> teachPlanList = new ArrayList<>();
+        try {
+            switch (theday){
+                case "Sunday":
+                    List<Sunday> sundayList = sundayDAO.findByTno(tno);
+                    if(sundayList.size()!=0) {
+                        for(Sunday s:sundayList){
+                            TeachPlan t = new TeachPlan(s.getCourse().getCname(),s.getClassroom(),s.getStart(),s.getEnd(),
+                                    s.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(t);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Monday":
+                    List<Monday> mondayList = mondayDAO.findByTno(tno);
+                    if(mondayList.size()!=0) {
+                        for(Monday m:mondayList){
+                            TeachPlan t = new TeachPlan(m.getCourse().getCname(),m.getClassroom(),m.getStart(),m.getEnd(),
+                                    m.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(t);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Tuesday":
+                    List<Tuesday> tuesdayList = tuesdayDAO.findByTno(tno);
+                    if(tuesdayList.size()!=0) {
+                        for(Tuesday t:tuesdayList){
+                            TeachPlan tp = new TeachPlan(t.getCourse().getCname(),t.getClassroom(),t.getStart(),t.getEnd(),
+                                    t.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(tp);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Wednesday":
+                    List<Wednesday> wednesdayList = wednesdayDAO.findByTno(tno);
+                    if(wednesdayList.size()!=0) {
+                        for(Wednesday w:wednesdayList){
+                            TeachPlan t = new TeachPlan(w.getCourse().getCname(),w.getClassroom(),w.getStart(),w.getEnd(),
+                                    w.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(t);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Thursday":
+                    List<Thursday> thursdayList = thursdayDAO.findByTno(tno);
+                    if(thursdayList.size()!=0) {
+                        for(Thursday t:thursdayList){
+                            TeachPlan tp = new TeachPlan(t.getCourse().getCname(),t.getClassroom(),t.getStart(),t.getEnd(),
+                                    t.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(tp);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Friday":
+                    List<Friday> fridayList = fridayDAO.findByTno(tno);
+                    if(fridayList.size()!=0) {
+                        for(Friday f:fridayList){
+                            TeachPlan tp = new TeachPlan(f.getCourse().getCname(),f.getClassroom(),f.getStart(),f.getEnd(),
+                                    f.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(tp);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+                case "Saturday":
+                    List<Saturday> saturdayList = saturdayDAO.findByTno(tno);
+                    if(saturdayList.size()!=0) {
+                        for(Saturday s:saturdayList){
+                            TeachPlan tp = new TeachPlan(s.getCourse().getCname(),s.getClassroom(),s.getStart(),s.getEnd(),
+                                    s.getCourse().getSelectedCourses().size());
+                            teachPlanList.add(tp);
+                        }
+                        result.setMsg("获取任课成功");
+                        result.setData(teachPlanList);
+                    }
+                    break;
+            }
+            if(result.getMsg()!="获取任课成功"){
+                result.setStatus(200);
+                result.setMsg("无任课");
+                result.setResult("fail");
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            result.setStatus(500);
+            result.setMsg("获取任课失败");
+            result.setResult("fail");
+        }
+        return result;
+>>>>>>> Stashed changes
     }
-    //查看周日日程安排
-    public CommonResult findSunday(){
+
+    //按时间查看教室日程安排
+    public CommonResult findClassroomPlan(String week,String theday){
         CommonResult result=new CommonResult();
+<<<<<<< Updated upstream
         String schedule = "第"+Variable.getWeek()+"周"+"星期日";
        // result = mergeRecord(schedule);
         return  result;
@@ -260,33 +260,173 @@ public class TeacherService {
 //        }
 //        return result;
 //    }
+=======
+        result = mergeRecord(week,theday);
+        return  result;
+    }
 
-    //按教室搜索周一安排
-    public List<Monday> findByClassroom1(String classroom){
-        return mondayDAO.findByClassroom(classroom);
+    //合并当天课程安排和学生预约
+    public CommonResult mergeRecord(String week,String theday){
+        CommonResult result=new CommonResult();
+        List<ClassroomPlan> classroomPlans = new ArrayList<>();
+        try {
+            List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndState(week,theday,"通过");
+            switch (theday){
+                case "Sunday": List<Sunday> sundayList = sundayDAO.findAllByOrOrderByStart();
+                    if(sundayList.size()!=0){
+                        for(Sunday m:sundayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Monday":List<Monday> mondayList = mondayDAO.findAllByOrOrderByStart();
+                    if(mondayList.size()!=0){
+                        for(Monday m:mondayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Tuesday":List<Tuesday> tuesdayList = tuesdayDAO.findAllByOrOrderByStart();
+                    if(tuesdayList.size()!=0){
+                        for(Tuesday m:tuesdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Wednesday":List<Wednesday> wednesdayList = wednesdayDAO.findAllByOrOrderByStart();
+                    if(wednesdayList.size()!=0){
+                        for(Wednesday m:wednesdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Thursday":List<Thursday> thursdayList = thursdayDAO.findAllByOrOrderByStart();
+                    if(thursdayList.size()!=0){
+                        for(Thursday m:thursdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Friday":List<Friday> fridayList = fridayDAO.findAllByOrOrderByStart();
+                    if(fridayList.size()!=0){
+                        for(Friday m:fridayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Saturday":List<Saturday> saturdayList = saturdayDAO.findAllByOrOrderByStart();
+                    if(saturdayList.size()!=0){
+                        for(Saturday m:saturdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+            }
+            //学生安排
+            if(applies.size()!=0) {
+                for(Apply a:applies){
+                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getStart(),a.getEnd(),"已预约使用",a.getStudent().getName());
+                }
+                result.setMsg("获取教室安排成功");
+                result.setData(classroomPlans);
+            }else {
+                result.setStatus(500);
+                result.setMsg("当日无记录");
+                result.setResult("fail");
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            result.setStatus(500);
+            result.setMsg("获取教室安排失败");
+            result.setResult("fail");
+        }
+        return result;
     }
-    //按教室搜索周二安排
-    public List<Tuesday> findByClassroom2(String classroom){
-        return tuesdayDAO.findByClassroom(classroom);
+>>>>>>> Stashed changes
+
+    //按时间楼名搜索安排
+    public CommonResult findByBuild(String week,String theday,String build){
+        CommonResult result=new CommonResult();
+        List<ClassroomPlan> classroomPlans = new ArrayList<>();
+        try {
+            List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndClassroomLikeAndState(week,theday,build,"通过");
+            if(applies.size()!=0){
+                for(Apply a:applies){
+                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getStart(),a.getEnd(),"已预约使用",a.getStudent().getName());
+                    classroomPlans.add(c);
+                }
+            }
+            switch (theday){
+                case "Sunday": List<Sunday> sundayList = sundayDAO.findByClassroomLike("%"+build+"%");
+                    if(sundayList.size()!=0){
+                        for(Sunday m:sundayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Monday":List<Monday> mondayList = mondayDAO.findByClassroomLike("%"+build+"%");
+                    if(mondayList.size()!=0){
+                        for(Monday m:mondayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Tuesday":List<Tuesday> tuesdayList = tuesdayDAO.findByClassroomLike("%"+build+"%");
+                    if(tuesdayList.size()!=0){
+                        for(Tuesday m:tuesdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Wednesday":List<Wednesday> wednesdayList = wednesdayDAO.findByClassroomLike("%"+build+"%");
+                    if(wednesdayList.size()!=0){
+                        for(Wednesday m:wednesdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Thursday":List<Thursday> thursdayList = thursdayDAO.findByClassroomLike("%"+build+"%");
+                    if(thursdayList.size()!=0){
+                        for(Thursday m:thursdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Friday":List<Friday> fridayList = fridayDAO.findByClassroomLike("%"+build+"%");
+                    if(fridayList.size()!=0){
+                        for(Friday m:fridayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+                case "Saturday":List<Saturday> saturdayList = saturdayDAO.findByClassroomLike("%"+build+"%");
+                    if(saturdayList.size()!=0){
+                        for(Saturday m:saturdayList){
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            classroomPlans.add(c);
+                        }
+                    }
+                    break;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
-    //按教室搜索周三安排
-    public List<Wednesday> findByClassroom3(String classroom){
-        return wednesdayDAO.findByClassroom(classroom);
-    }
-    //按教室搜索周四安排
-    public List<Thursday> findByClassroom4(String classroom){
-        return thursdayDAO.findByClassroom(classroom);
-    }
-    //按教室搜索周五安排
-    public List<Friday> findByClassroom5(String classroom){
-        return fridayDAO.findByClassroom(classroom);
-    }
-    //按教室搜索周六安排
-    public List<Saturday> findByClassroom6(String classroom){
-        return saturdayDAO.findByClassroom(classroom);
-    }
-    //按教室搜索周日安排
-    public List<Sunday> findByClassroom7(String classroom){
-        return sundayDAO.findByClassroom(classroom);
-    }
+
 }

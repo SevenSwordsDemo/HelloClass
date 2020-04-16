@@ -8,8 +8,10 @@ import java.util.List;
 
 @Repository
 public interface SaturdayDAO extends JpaRepository<Saturday,Long> {
-    //根据教室找安排
-    public List<Saturday> findByClassroom(String classroom);
+    //根据楼名找安排
+    public List<Saturday> findByClassroomLike(String classroom);
+
+    List<Saturday> findAllByOrOrderByStart();
 
     List<Saturday> findByCno(String cno);
 

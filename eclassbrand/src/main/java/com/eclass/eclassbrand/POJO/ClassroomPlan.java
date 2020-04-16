@@ -2,23 +2,17 @@ package com.eclass.eclassbrand.POJO;
 
 public class ClassroomPlan {
     String classroom;
-    String schedule;
+    int start;
+    int end;
     String state;
     String user;
 
-    public ClassroomPlan(String classroom, String schedule, String state, String user) {
+    public ClassroomPlan(String classroom, int start, int end, String state, String user) {
         this.classroom = classroom;
-        this.schedule = schedule;
+        this.start = start;
+        this.end = end;
         this.state = state;
         this.user = user;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public String getClassroom() {
@@ -29,12 +23,28 @@ public class ClassroomPlan {
         this.classroom = classroom;
     }
 
-    public String getSchedule() {
-        return schedule;
+    public int getStart() {
+        return start;
     }
 
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getUser() {

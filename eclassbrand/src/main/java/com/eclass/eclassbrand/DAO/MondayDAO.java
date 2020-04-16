@@ -9,8 +9,10 @@ import java.util.List;
 
 @Repository
 public interface MondayDAO extends JpaRepository<Monday, BigInteger> {
-    //根据教室找安排
-    List<Monday> findByClassroom(String classroom);
+    //根据楼名找安排
+    List<Monday> findByClassroomLike(String build);
+
+    List<Monday> findAllByOrOrderByStart();
 
     //查询这门课安排
     List<Monday> findByCno(String cno);

@@ -28,6 +28,7 @@ public class TeacherController {
     ApplyService applyService;
 
     //任课查询
+<<<<<<< Updated upstream
    // @RequestMapping(value = "teachcourses",method = RequestMethod.POST)
 //    public CommonResult viewTeacherCourses(String tno)
 //    {
@@ -37,85 +38,50 @@ public class TeacherController {
 //
 //        //return teacherService.myCourses(tno,theday);
 //    }
+=======
+    @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
+    public CommonResult viewTeacherCourses(String tno)
+    {
+        CommonResult result = new CommonResult();
+        Date date = new Date();
+        String theday = getWeekOfDate(date);
+
+        return teacherService.myCourses(tno,theday);
+    }
+>>>>>>> Stashed changes
 
     //签到查询
-    @RequestMapping(value = "/signin",method = RequestMethod.POST)
+    @RequestMapping(value = "/signIn",method = RequestMethod.POST)
     public CommonResult viewSignin(String tno,String week,String dayofweek)
     {
         return teacherService.viewSignin(tno,week,dayofweek);
     }
 
 
-    //根据当前日前返回当天教室情况安排
-    @RequestMapping(value = "/theday",method = RequestMethod.GET)
-    public CommonResult returnTheDay()
+    //根据时间返回当天教室情况安排
+    @RequestMapping(value = "/theDayPlans",method = RequestMethod.POST)
+    public CommonResult returnTheDay(String week,String theday)
     {
         CommonResult result = new CommonResult();
+<<<<<<< Updated upstream
         Date date = new Date();
         String theday = Util.getWeekOfDate(date);
+=======
+        result =  teacherService.findClassroomPlan(week,theday);
+>>>>>>> Stashed changes
 
-        switch (theday){
-            case "Sunday":result =  teacherService.findSunday();
-            break;
-            case "Monday":result =  teacherService.findMonday();
-            break;
-            case "Tuesday":result =  teacherService.findTuesday();
-            break;
-            case "Wednesday":result = teacherService.findWednesday();
-            break;
-            case "Thursday":result =  teacherService.findThursday();
-            break;
-            case "Friday":result =  teacherService.findFriday();
-            break;
-            case "Saturday":result =  teacherService.findSaturday();
-            break;
-        }
         return result;
     }
-    //查询周一安排
-    @RequestMapping(value = "/viewMonday",method = RequestMethod.GET)
-    public CommonResult returnMonday()
-    {
-        return teacherService.findMonday();
-    }
-    //查询周二安排
-    @RequestMapping(value = "/viewTuesday",method = RequestMethod.GET)
-    public CommonResult returnTuesday()
-    {
-        return teacherService.findTuesday();
-    }
-    //查询周三安排
-    @RequestMapping(value = "/viewWednesday",method = RequestMethod.GET)
-    public CommonResult returnWednesday()
-    {
-        return teacherService.findWednesday();
-    }
-    //查询周四安排
-    @RequestMapping(value = "/viewThursday",method = RequestMethod.GET)
-    public CommonResult returnThursday()
-    {
-        return teacherService.findThursday();
-    }
-    //查询周五安排
-    @RequestMapping(value = "/viewFriday",method = RequestMethod.GET)
-    public CommonResult returnFriday()
-    {
-        return teacherService.findFriday();
-    }
-    //查询周六安排
-    @RequestMapping(value = "/viewSaturday",method = RequestMethod.GET)
-    public CommonResult returnSaturday()
-    {
-        return teacherService.findSaturday();
-    }
-    //查询周日安排
-    @RequestMapping(value = "/viewSunday",method = RequestMethod.GET)
-    public CommonResult returnSunday()
-    {
-        return teacherService.findSunday();
-    }
 
+    //根据时间楼名返回教室安排
+    @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
+    public CommonResult returnTheDayByBuild(String week,String theday,String build)
+    {
+        CommonResult result = new CommonResult();
+        result =  teacherService.findByBuild(week,theday,build);
 
+        return result;
+    }
 
 
     private void sendResponse(HttpServletResponse response, String responseText)

@@ -4,13 +4,15 @@ public class TeachPlan {
 
     String cname;
     String classroom;
-    String schedule;
+    int start;
+    int end;
     int size;
 
-    public TeachPlan(String cname, String classroom, String schedule, int size) {
+    public TeachPlan(String cname, String classroom, int start, int end, int size) {
         this.cname = cname;
         this.classroom = classroom;
-        this.schedule = schedule;
+        this.start = start;
+        this.end = end;
         this.size = size;
     }
 
@@ -30,12 +32,20 @@ public class TeachPlan {
         this.classroom = classroom;
     }
 
-    public String getSchedule() {
-        return schedule;
+    public int getStart() {
+        return start;
     }
 
-    public void setSchedule(String schedule) {
-        this.schedule = schedule;
+    public void setStart(int start) {
+        this.start = start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public void setEnd(int end) {
+        this.end = end;
     }
 
     public int getSize() {

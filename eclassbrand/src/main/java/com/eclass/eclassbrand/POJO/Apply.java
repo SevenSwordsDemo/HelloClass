@@ -1,54 +1,39 @@
 package com.eclass.eclassbrand.POJO;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name="apply")
 @JsonInclude(JsonInclude.Include.NON_NULL)//如果字段为空则不进行序列化
-@JsonIgnoreProperties(value={"hibernateLazyInitializer", "handler" ,})
 public class Apply implements Serializable {
   private static final long serialVersionUID = -6615059567194245149L;
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private BigInteger id;
-
-  @Column(name="sid",nullable = false)
-  private int sid;
-
+  @Column(name="sno",nullable = false)
+  private String sno;
   @Column(name="classroom",nullable = false)
   private String classroom;
-
   private int start;
   private int end;
   @Column(name="state")
   private String state;
-
   @Column(name="reason")
   private String reason;
-
   @Column(name = "apply_time",nullable = false)
   private Timestamp applyTime;
-
-  @JsonIgnore
-  private int week;
-
-  @Column(name="day_of_week",nullable = false)
-  @JsonIgnore
+  @Column(name = "day_of_week",nullable = false)
   private String dayOfWeek;
-  private Date date;
+  private Timestamp date;
 
-
-  @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.REFRESH},optional = false)
-  @JoinColumn(name = "sid",insertable=false, updatable=false)
-  @JsonIgnoreProperties(value = {"applyList"})
+  @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = Student.class)
+  @JoinColumn(name = "sno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Student student;
 
   public Student getStudent() {
@@ -68,12 +53,12 @@ public class Apply implements Serializable {
   }
 
 
-  public int getSid() {
-    return sid;
+  public String getSno() {
+    return sno;
   }
 
-  public void setSid(int sid) {
-    this.sid = sid;
+  public void setSno(String sno) {
+    this.sno = sno;
   }
 
 
@@ -109,14 +94,6 @@ public class Apply implements Serializable {
     this.applyTime = applyTime;
   }
 
-  public Date getDate() {
-    return date;
-  }
-
-  public void setDate(Date date) {
-    this.date = date;
-  }
-
   public String getDayOfWeek() {
     return dayOfWeek;
   }
@@ -125,11 +102,12 @@ public class Apply implements Serializable {
     this.dayOfWeek = dayOfWeek;
   }
 
-  public int getWeek() {
-    return week;
+  public Timestamp getDate() {
+    return date;
   }
-  public void setWeek(int week) {
-    this.week = week;
+
+  public void setDate(Timestamp date) {
+    this.date = date;
   }
 
   public String getState() {
