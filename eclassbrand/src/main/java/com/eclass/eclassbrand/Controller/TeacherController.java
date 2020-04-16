@@ -28,27 +28,15 @@ public class TeacherController {
     ApplyService applyService;
 
     //任课查询
-<<<<<<< Updated upstream
-   // @RequestMapping(value = "teachcourses",method = RequestMethod.POST)
-//    public CommonResult viewTeacherCourses(String tno)
-//    {
-//        CommonResult result = new CommonResult();
-//        Date date = new Date();
-//        String theday = Util.getWeekOfDate(date);
-//
-//        //return teacherService.myCourses(tno,theday);
-//    }
-=======
     @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
     public CommonResult viewTeacherCourses(String tno)
     {
         CommonResult result = new CommonResult();
         Date date = new Date();
-        String theday = getWeekOfDate(date);
+        String theday = Util.getWeekOfDate(date);
 
         return teacherService.myCourses(tno,theday);
     }
->>>>>>> Stashed changes
 
     //签到查询
     @RequestMapping(value = "/signIn",method = RequestMethod.POST)
@@ -63,12 +51,7 @@ public class TeacherController {
     public CommonResult returnTheDay(String week,String theday)
     {
         CommonResult result = new CommonResult();
-<<<<<<< Updated upstream
-        Date date = new Date();
-        String theday = Util.getWeekOfDate(date);
-=======
         result =  teacherService.findClassroomPlan(week,theday);
->>>>>>> Stashed changes
 
         return result;
     }
