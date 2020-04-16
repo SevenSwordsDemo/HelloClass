@@ -2,6 +2,7 @@ package com.eclass.eclassbrand.Controller;
 
 
 import com.eclass.eclassbrand.Modal.CommonResult;
+import com.eclass.eclassbrand.POJO.Thursday;
 import com.eclass.eclassbrand.Service.TestService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +17,10 @@ public class TestController {
 
     @Resource
     private TestService testService;
-    @RequestMapping(value = "controller",method = RequestMethod.GET)
-
-    public CommonResult sample()
+    @RequestMapping(value = "test",method = RequestMethod.GET)
+    public CommonResult test()
     {
-       return testService.sample();
+       return testService.test();
     }
 
     @RequestMapping("addApply")

@@ -1,18 +1,14 @@
 package com.eclass.eclassbrand.Service;
 
-import com.eclass.eclassbrand.DAO.ApplyDAO;
-import com.eclass.eclassbrand.DAO.ClassroomDAO;
-import com.eclass.eclassbrand.DAO.TeacherDAO;
+import com.eclass.eclassbrand.DAO.*;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Apply;
-import com.eclass.eclassbrand.POJO.Classroom;
-import com.eclass.eclassbrand.POJO.Teacher;
+import com.eclass.eclassbrand.POJO.Thursday;
 import com.eclass.eclassbrand.Util;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -23,21 +19,18 @@ public class TestService {
     TeacherDAO teacherDAO;
     @Resource
     ApplyDAO applyDAO;
-
+    @Resource
+    ThursdayDAO thursdayDAO;
+    @Resource
+    StudentDAO studentDAO;
     @Resource
     ClassroomDAO classroomDAO;
 
-    public CommonResult sample()
+    public CommonResult test()
     {
         CommonResult result=new CommonResult();
         try {
-            Teacher teacher=new Teacher();
-            teacher.setName("王重阳");
-            teacher.setGender("男");
-            teacher.setAcademy("计算机学院");
-            teacher.setTno("t123456");
-            teacher.setPassword("123456");
-
+           result.setData(studentDAO.findByName("乔峰"));
         }
         catch (Exception e)
         {
@@ -81,9 +74,13 @@ public class TestService {
     public CommonResult addClassroom()
     {
         CommonResult result=new CommonResult();
-        Classroom classroom=new Classroom("广B","203");
-        result.setData(classroomDAO.save(classroom));
+//        Classroom classroom=new Classroom("广B","102");
+//        result.setData(classroomDAO.save(classroom));
+        Thursday thursday=new Thursday("t123456","c06",8,9,"博文B101","1-8");
+        thursdayDAO.save(thursday);
         return result;
     }
+
+
 
 }

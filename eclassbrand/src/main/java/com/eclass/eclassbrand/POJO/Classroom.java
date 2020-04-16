@@ -1,44 +1,51 @@
 package com.eclass.eclassbrand.POJO;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "classroom")
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name="classroom")
 public class Classroom implements Serializable {
-
-    private static final long serialVersionUID = 3743430175643046479L;
+    private static final long serialVersionUID = -4633708003841860149L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private Long id;
     private String floor;
-    private String number;
+    @Column(name = "class_num")
+    private String classNum;
+    @Column(name="device_id")
+    private String deviceId;
+    @Column(name="device_state")
+    private String deviceState;
 
     public Classroom() {
-    }
-
-    public Classroom(String floor, String number) {
-        this.floor = floor;
-        this.number = number;
     }
 
     public String getFloor() {
         return floor;
     }
-
     public void setFloor(String floor) {
         this.floor = floor;
     }
 
-    public String getNumber() {
-        return number;
+    public String getClassNum() {
+        return classNum;
+    }
+    public void setClassNum(String classNum) {
+        this.classNum = classNum;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public String getDeviceId() {
+        return deviceId;
+    }
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDeviceState() {
+        return deviceState;
+    }
+    public void setDeviceState(String deviceState) {
+        this.deviceState = deviceState;
     }
 }

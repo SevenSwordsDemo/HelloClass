@@ -12,4 +12,7 @@ import java.math.BigInteger;
 public interface StudentDAO extends JpaRepository<Student, BigInteger> {
 
     Student findBySno(String sno);
+
+    @Query(value = "select * from student where name=?1",nativeQuery = true)
+    Student findByName(String name);
 }

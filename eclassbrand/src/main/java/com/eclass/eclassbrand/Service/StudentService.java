@@ -11,20 +11,6 @@ import java.util.List;
 public class StudentService {
     @Resource
     ApplyDAO applyDAO;
-    @Resource
-    MondayDAO mondayDAO;
-    @Resource
-    TuesdayDAO tuesdayDAO;
-    @Resource
-    WednesdayDAO wednesdayDAO;
-    @Resource
-    ThursdayDAO thursdayDAO;
-    @Resource
-    FridayDAO fridayDAO;
-    @Resource
-    SaturdayDAO saturdayDAO;
-    @Resource
-    SundayDAO sundayDAO;
 
     //保存申请记录
     public void saveApplyRecord(Apply apply){

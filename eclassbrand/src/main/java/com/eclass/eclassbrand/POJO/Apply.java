@@ -18,7 +18,7 @@ public class Apply implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private BigInteger id;
-  @Column(name="sno",nullable = false)
+  @Column(name="sid",nullable = false)
   private int sid;
   @Column(name="classroom",nullable = false)
   private String classroom;

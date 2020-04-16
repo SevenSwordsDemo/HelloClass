@@ -4,6 +4,7 @@ import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.Service.ApplyService;
+import com.eclass.eclassbrand.Service.ScheduleService;
 import com.eclass.eclassbrand.Service.TeacherService;
 import com.eclass.eclassbrand.Util;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,8 @@ public class TeacherController {
     TeacherService teacherService;
     @Resource
     ApplyService applyService;
+    @Resource
+    ScheduleService scheduleService;
 
     //任课查询
     @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
@@ -48,7 +51,7 @@ public class TeacherController {
     public CommonResult returnTheDay(String week,String theday)
     {
         CommonResult result = new CommonResult();
-        result =  teacherService.findClassroomPlan(week,theday);
+        result = scheduleService.findClassroomPlan(week,theday);
 
         return result;
     }
@@ -58,7 +61,7 @@ public class TeacherController {
     public CommonResult returnTheDayByBuild(String week,String theday,String build)
     {
         CommonResult result = new CommonResult();
-        result =  teacherService.findByBuild(week,theday,build);
+        result =  scheduleService.findByBuild(week,theday,build);
 
         return result;
     }
