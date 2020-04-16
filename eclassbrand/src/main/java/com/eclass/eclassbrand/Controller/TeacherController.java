@@ -29,12 +29,9 @@ public class TeacherController {
 
     //任课查询
     @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
-    public CommonResult viewTeacherCourses(String tno)
+    public CommonResult viewTeacherCourses(String tno,String theday)
     {
         CommonResult result = new CommonResult();
-        Date date = new Date();
-        String theday = Util.getWeekOfDate(date);
-
         return teacherService.myCourses(tno,theday);
     }
 
