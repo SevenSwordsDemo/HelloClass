@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigInteger;
 
 @Repository
-public interface StudentDAO extends JpaRepository<Student, BigInteger> {
+public interface StudentDAO extends JpaRepository<Student, Integer> {
 
     Student findBySno(String sno);
 

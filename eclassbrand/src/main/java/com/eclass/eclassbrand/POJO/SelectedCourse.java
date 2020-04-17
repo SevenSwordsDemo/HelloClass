@@ -1,6 +1,7 @@
 package com.eclass.eclassbrand.POJO;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
@@ -22,9 +23,9 @@ public class SelectedCourse implements Serializable {
   private String tno;
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = Course.class)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @JsonIgnoreProperties(value = { "selectedCourses" })
+  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
   private Course course;
-
 
   public Course getCourse() {
     return course;

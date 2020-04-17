@@ -22,7 +22,7 @@ public class ApplyService {
 //        return applies;
 //    }
 
-    public List<Apply> viewStudentPlan(String week,String date){
+    public List<Apply> viewStudentPlan(int week,String date){
         List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndState(week,date,"通过");
         return applies;
     }

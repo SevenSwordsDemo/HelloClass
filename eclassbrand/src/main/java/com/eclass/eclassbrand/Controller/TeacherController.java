@@ -31,7 +31,7 @@ public class TeacherController {
     ScheduleService scheduleService;
 
     //任课查询
-    @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
+    @RequestMapping(value = "teachCourses",method = {RequestMethod.GET, RequestMethod.POST})
     public CommonResult viewTeacherCourses(String tno,String theday)
     {
         CommonResult result = new CommonResult();
@@ -39,16 +39,16 @@ public class TeacherController {
     }
 
     //签到查询
-    @RequestMapping(value = "/signIn",method = RequestMethod.POST)
-    public CommonResult viewSignin(String tno,String week,String dayofweek)
+    @RequestMapping(value = "/signIn",method = {RequestMethod.GET, RequestMethod.POST})
+    public CommonResult viewSignin(String tno,int week,String dayofweek)
     {
         return teacherService.viewSignin(tno,week,dayofweek);
     }
 
 
     //根据时间返回当天教室情况安排
-    @RequestMapping(value = "/theDayPlans",method = RequestMethod.POST)
-    public CommonResult returnTheDay(String week,String theday)
+    @RequestMapping(value = "/theDayPlans",method = {RequestMethod.GET, RequestMethod.POST})
+    public CommonResult returnTheDay(int week,String theday)
     {
         CommonResult result = new CommonResult();
         result = scheduleService.findClassroomPlan(week,theday);
@@ -57,8 +57,8 @@ public class TeacherController {
     }
 
     //根据时间楼名返回教室安排
-    @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
-    public CommonResult returnTheDayByBuild(String week,String theday,String build)
+    @RequestMapping(value = "/theDayPlansByBuild",method = {RequestMethod.GET, RequestMethod.POST})
+    public CommonResult returnTheDayByBuild(int week,String theday,String build)
     {
         CommonResult result = new CommonResult();
         result =  scheduleService.findByBuild(week,theday,build);

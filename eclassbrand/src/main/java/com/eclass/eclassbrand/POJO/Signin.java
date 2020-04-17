@@ -21,12 +21,12 @@ public class Signin implements Serializable {
   private String dayOfWeek;
   private String sno;
 
-  @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Course course;
 
-  @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "sno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+  @JoinColumn(name = "sno",insertable=false, updatable=false,referencedColumnName = "sno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Student student;
 
   public Course getCourse() {

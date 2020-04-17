@@ -17,7 +17,7 @@ public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private Integer id;
     @Column(name="sno",nullable = false)
     private String sno;
     @Column(name="password",nullable = false)
@@ -41,10 +41,10 @@ public class Student implements Serializable {
     @JoinColumn(name = "sid",insertable=false, updatable=false)
     private List<Apply> applyList;
 
-  public BigInteger getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(BigInteger id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
