@@ -160,14 +160,16 @@ public class ScheduleService {
     }
 
     //按时间楼名搜索安排
-    public CommonResult findByBuild(String week,String theday,String build){
+    public CommonResult findByBuild(int week,String theday,String build){
         CommonResult result=new CommonResult();
         List<ClassroomPlan> classroomPlans = new ArrayList<>();
         try {
             List<Apply> applies = applyDAO.findByWeekAndDayOfWeekAndClassroomLikeAndState(week,theday,build,"通过");
+            System.out.println("appliesSize:"+applies.size());
             if(applies.size()!=0){
                 for(Apply a:applies){
-                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getStart(),a.getEnd(),"已预约使用",a.getStudent().getName());
+                    System.out.println("apply:"+a.getClassroom());
+                    ClassroomPlan c = new ClassroomPlan(a.getClassroom(),a.getStart(),a.getEnd(),"已预约使用",a.getStudent().getName(),a.getReason());
                     classroomPlans.add(c);
                 }
             }
@@ -180,10 +182,10 @@ public class ScheduleService {
                         }
                     }
                     break;
-                case "Monday":List<Monday> mondayList = mondayDAO.findByClassroomLike("%"+build+"%");
+                case "Monday":List<Monday> mondayList = mondayDAO.findByClassroomLike(build+"%");
                     if(mondayList.size()!=0){
                         for(Monday m:mondayList){
-                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName());
+                            ClassroomPlan c = new ClassroomPlan(m.getClassroom(),m.getStart(),m.getEnd(),"已预约使用",m.getTeacher().getName(),m.getCourse().getCname());
                             classroomPlans.add(c);
                         }
                     }
@@ -229,6 +231,7 @@ public class ScheduleService {
                     }
                     break;
             }
+            result.setData(classroomPlans);
         }catch (Exception e){
             e.printStackTrace();
         }

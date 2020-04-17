@@ -2,6 +2,7 @@ package com.eclass.eclassbrand.Controller;
 
 
 import com.eclass.eclassbrand.Modal.CommonResult;
+import com.eclass.eclassbrand.POJO.Monday;
 import com.eclass.eclassbrand.POJO.Thursday;
 import com.eclass.eclassbrand.Service.TestService;
 
@@ -33,5 +34,11 @@ public class TestController {
     public CommonResult addClassroom()
     {
         return testService.addClassroom();
+    }
+
+    @RequestMapping("/getThursday")
+    public Monday getThursday()
+    {
+        return testService.getMonday();
     }
 }

@@ -19,7 +19,7 @@ public class Course implements Serializable {
   private String cname;
 
   @OneToMany(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = SelectedCourse.class)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
   private List<SelectedCourse> selectedCourses;
 
   public List<SelectedCourse> getSelectedCourses() {

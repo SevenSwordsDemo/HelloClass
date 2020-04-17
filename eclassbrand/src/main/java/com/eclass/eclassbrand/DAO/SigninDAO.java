@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface SigninDAO extends JpaRepository<Signin,Long> {
 
-    List<Signin> findByCnoAndWeekAndDayOfWeek(String cno, String week, String dayofweek);
+    List<Signin> findByCnoAndWeekAndDayOfWeek(String cno, int week, String dayofweek);
 }

@@ -6,13 +6,22 @@ public class ClassroomPlan {
     int end;
     String state;
     String user;
-
+    String activity;
     public ClassroomPlan(String classroom, int start, int end, String state, String user) {
         this.classroom = classroom;
         this.start = start;
         this.end = end;
         this.state = state;
         this.user = user;
+    }
+
+    public ClassroomPlan(String classroom, int start, int end, String state, String user, String activity) {
+        this.classroom = classroom;
+        this.start = start;
+        this.end = end;
+        this.state = state;
+        this.user = user;
+        this.activity = activity;
     }
 
     public String getClassroom() {
@@ -53,5 +62,13 @@ public class ClassroomPlan {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 }

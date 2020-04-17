@@ -3,6 +3,7 @@ package com.eclass.eclassbrand.Service;
 import com.eclass.eclassbrand.DAO.*;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Apply;
+import com.eclass.eclassbrand.POJO.Monday;
 import com.eclass.eclassbrand.POJO.Thursday;
 import com.eclass.eclassbrand.Util;
 import org.springframework.stereotype.Service;
@@ -26,11 +27,14 @@ public class TestService {
     @Resource
     ClassroomDAO classroomDAO;
 
+    @Resource
+    MondayDAO mondayDAO;
+
     public CommonResult test()
     {
         CommonResult result=new CommonResult();
         try {
-           result.setData(studentDAO.findByName("乔峰"));
+           result.setData(mondayDAO.getCno());
         }
         catch (Exception e)
         {
@@ -79,6 +83,11 @@ public class TestService {
         Thursday thursday=new Thursday("t123456","c06",8,9,"博文B101","1-8");
         thursdayDAO.save(thursday);
         return result;
+    }
+
+    public Monday getMonday()
+    {
+        return mondayDAO.getOne(Long.valueOf(1));
     }
 
 

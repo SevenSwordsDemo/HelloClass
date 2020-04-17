@@ -36,7 +36,7 @@ public class TeacherService {
 
 
     //查询签到情况
-    public CommonResult viewSignin(String tno,String week,String dayofweek){
+    public CommonResult viewSignin(String tno,int week,String dayofweek){
         CommonResult result=new CommonResult();
         try {
             List<SelectedCourse> selectedCourses = selectedCourseDAO.findByTno(tno);

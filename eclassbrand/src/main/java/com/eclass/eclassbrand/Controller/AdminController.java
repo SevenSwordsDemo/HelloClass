@@ -56,4 +56,11 @@ public class AdminController {
         return adminService.delAdmin(account);
     }
 
+    //按楼名和教室及时间查找日程安排
+    @RequestMapping(value = "/getSchedule",method = RequestMethod.POST)
+    public CommonResult getSchedule(int week,String theday,String build )
+    {
+        return scheduleService.findByBuild(week,theday,build);
+    }
+
 }

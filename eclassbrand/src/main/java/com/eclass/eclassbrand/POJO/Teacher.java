@@ -16,7 +16,7 @@ public class Teacher implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private BigInteger id;
+  private Long id;
   @Column(name="tno",nullable = false)
   private String tno;
   @Column(name="name",nullable = false)
@@ -30,11 +30,11 @@ public class Teacher implements Serializable {
   private String academy;
 
 
-  public BigInteger getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(BigInteger id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

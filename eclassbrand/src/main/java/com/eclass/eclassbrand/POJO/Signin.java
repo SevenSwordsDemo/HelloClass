@@ -17,16 +17,16 @@ public class Signin implements Serializable {
   private long id;
   private String cno;
   private String tname;
-  private long week;
+  private int week;
   private String dayOfWeek;
   private String sno;
 
   @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
   private Course course;
 
   @OneToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "sno",insertable=false, updatable=false,foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
+  @JoinColumn(name = "sno",insertable=false, updatable=false,referencedColumnName = "sno")
   private Student student;
 
   public Course getCourse() {
@@ -72,11 +72,11 @@ public class Signin implements Serializable {
   }
 
 
-  public long getWeek() {
+  public int getWeek() {
     return week;
   }
 
-  public void setWeek(long week) {
+  public void setWeek(int week) {
     this.week = week;
   }
 
