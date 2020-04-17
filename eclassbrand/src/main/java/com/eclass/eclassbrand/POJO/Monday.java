@@ -22,7 +22,6 @@ public class Monday implements Serializable {
   private String classroom;
   private String week;
 
-
   public Monday() {
   }
 

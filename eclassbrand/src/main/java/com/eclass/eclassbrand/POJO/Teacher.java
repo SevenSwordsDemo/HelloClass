@@ -17,6 +17,7 @@ public class Teacher implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   @Column(name="tno",nullable = false)
   private String tno;
   @Column(name="name",nullable = false)
@@ -29,7 +30,6 @@ public class Teacher implements Serializable {
   @Column(name="academy",nullable = false)
   private String academy;
 
-
   public Long getId() {
     return id;
   }
@@ -37,7 +37,6 @@ public class Teacher implements Serializable {
   public void setId(Long id) {
     this.id = id;
   }
-
 
   public String getTno() {
     return tno;
@@ -47,7 +46,6 @@ public class Teacher implements Serializable {
     this.tno = tno;
   }
 
-
   public String getName() {
     return name;
   }
@@ -55,7 +53,6 @@ public class Teacher implements Serializable {
   public void setName(String name) {
     this.name = name;
   }
-
 
   public String getPassword() {
     return password;
@@ -65,7 +62,6 @@ public class Teacher implements Serializable {
     this.password = password;
   }
 
-
   public String getGender() {
     return gender;
   }
@@ -74,7 +70,6 @@ public class Teacher implements Serializable {
     this.gender = gender;
   }
 
-
   public String getAcademy() {
     return academy;
   }
@@ -82,5 +77,4 @@ public class Teacher implements Serializable {
   public void setAcademy(String academy) {
     this.academy = academy;
   }
-
 }

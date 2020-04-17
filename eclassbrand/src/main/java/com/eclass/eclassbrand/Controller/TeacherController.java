@@ -31,7 +31,7 @@ public class TeacherController {
     ScheduleService scheduleService;
 
     //任课查询
-    @RequestMapping(value = "teachCourses",method = RequestMethod.POST)
+    @RequestMapping(value = "teachCourses",method = {RequestMethod.GET, RequestMethod.POST})
     public CommonResult viewTeacherCourses(String tno,String theday)
     {
         CommonResult result = new CommonResult();
@@ -47,8 +47,8 @@ public class TeacherController {
 
 
     //根据时间返回当天教室情况安排
-    @RequestMapping(value = "/theDayPlans",method = RequestMethod.POST)
-    public CommonResult returnTheDay(String week,String theday)
+    @RequestMapping(value = "/theDayPlans",method = {RequestMethod.GET, RequestMethod.POST})
+    public CommonResult returnTheDay(int week,String theday)
     {
         CommonResult result = new CommonResult();
         result = scheduleService.findClassroomPlan(week,theday);

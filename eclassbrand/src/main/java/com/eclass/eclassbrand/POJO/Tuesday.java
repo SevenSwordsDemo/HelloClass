@@ -18,6 +18,8 @@ public class Tuesday {
   private int end;
   private String classroom;
   private String week;
+
+
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
   @JoinColumn(name = "tno",insertable=false, updatable=false,referencedColumnName = "tno")
   private Teacher teacher;

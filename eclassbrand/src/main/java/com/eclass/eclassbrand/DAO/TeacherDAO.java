@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigInteger;
 
 @Repository
-public interface TeacherDAO extends JpaRepository<Teacher, BigInteger> {
+public interface TeacherDAO extends JpaRepository<Teacher, Integer> {
 
     Teacher findByTno(String tno);
 }

@@ -19,6 +19,10 @@ public class Course implements Serializable {
   private String cname;
 
   @OneToMany(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = SelectedCourse.class)
+<<<<<<< HEAD
+=======
+  @JsonIgnoreProperties(value = { "course" })
+>>>>>>> b86dd0102bf780c3b53f50c917a98d1835cb013e
   @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
   private List<SelectedCourse> selectedCourses;
 

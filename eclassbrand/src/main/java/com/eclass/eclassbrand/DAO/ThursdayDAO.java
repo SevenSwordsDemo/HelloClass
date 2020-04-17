@@ -2,6 +2,8 @@ package com.eclass.eclassbrand.DAO;
 
 import com.eclass.eclassbrand.POJO.Thursday;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,7 +11,8 @@ import java.util.List;
 @Repository
 public interface ThursdayDAO extends JpaRepository<Thursday,Long> {
     //根据楼名找安排
-    List<Thursday> findByClassroomLike(String classroom);
+    @Query(value = "select * from thursday where classroom LIKE CONCAT(:classroom,'%')", nativeQuery = true)
+    List<Thursday> findByClassroomLike(@Param("classroom") String classroom );
 
     List<Thursday> findAllByOrderByStart();
 

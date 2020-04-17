@@ -18,97 +18,104 @@ public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="sno",nullable = false)
+
+    @Column(name = "sno", nullable = false)
     private String sno;
-    @Column(name="password",nullable = false)
+    @Column(name = "password", nullable = false)
     @JsonIgnore
     private String password;
-    @Column(name="name",nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name="academy",nullable = false)
+    @Column(name = "academy", nullable = false)
     private String academy;
-    @Column(name="class",nullable = false)
+    @Column(name = "class", nullable = false)
     private String classes;
-    @Column(name="gender",nullable = false)
+    @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name="faceInfo")
+    @Column(name = "faceInfo")
     @JsonIgnore
     private String faceInfo;
 
 
-    @OneToMany(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "sid",insertable=false, updatable=false)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "sid", insertable = false, updatable = false)
     private List<Apply> applyList;
 
-  public Long getId() {
-    return id;
-  }
-  public void setId(Long id) {
-    this.id = id;
-  }
 
+    public Long getId() {
+        return id;
+    }
 
-  public String getSno() {
-    return sno;
-  }
-  public void setSno(String sno) {
-    this.sno = sno;
-  }
+    public void setId(Long id) {
+    }
 
+    public String getSno() {
+        return sno;
+    }
 
-  public String getPassword() {
-    return password;
-  }
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public void setSno(String sno) {
+        this.sno = sno;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
+    public String getName() {
+        return name;
+    }
 
-  public String getAcademy() {
-    return academy;
-  }
-  public void setAcademy(String academy) {
-    this.academy = academy;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getAcademy() {
+        return academy;
+    }
 
-  public String getClasses() {
-    return classes;
-  }
-  public void setClasses(String classes) {
+    public void setAcademy(String academy) {
+        this.academy = academy;
+    }
+
+    public String getClasses() {
+        return classes;
+    }
+
+    public void setClasses(String classes) {
         this.classes = classes;
     }
 
-  public String getGender() {
-    return gender;
-  }
-  public void setGender(String gender) {
-    this.gender = gender;
-  }
+    public String getGender() {
+        return gender;
+    }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-  public String getFaceInfo() {
-    return faceInfo;
-  }
-  public void setFaceInfo(String faceInfo) {
-    this.faceInfo = faceInfo;
-  }
+    public String getFaceInfo() {
+        return faceInfo;
+    }
 
-  public List<Apply> getApplyList() {
+    public void setFaceInfo(String faceInfo) {
+        this.faceInfo = faceInfo;
+    }
+
+    public List<Apply> getApplyList() {
         return applyList;
     }
+
     public void setApplyList(List<Apply> applyList) {
         this.applyList = applyList;
     }
-
-
 }
+
+
+
+
+
