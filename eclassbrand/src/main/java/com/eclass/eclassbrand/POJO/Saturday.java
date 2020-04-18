@@ -25,20 +25,13 @@ public class Saturday implements Serializable {
   private String week;
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-<<<<<<< HEAD
-  @JoinColumn(name = "tno",insertable=false, updatable=false,referencedColumnName = "tno")
-=======
   @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Course course;
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
   @JoinColumn(name = "tno",insertable=false, updatable=false,referencedColumnName = "tno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
->>>>>>> b86dd0102bf780c3b53f50c917a98d1835cb013e
   private Teacher teacher;
 
-  @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
-  private Course course;
 
   public Teacher getTeacher() {
     return teacher;

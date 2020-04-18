@@ -1,74 +1,58 @@
 package com.eclass.eclassbrand.POJO;
 
-public class ClassroomPlan {
+import com.eclass.eclassbrand.Modal.CommonResult;
+import com.fasterxml.jackson.annotation.JsonView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ClassroomPlan implements Serializable {
+    private static final long serialVersionUID = 3323829657228223687L;
+
+    public interface CommonView extends CommonResult.CommonResultView {};
+    public interface AdminView extends CommonView{}
     String classroom;
-    int start;
-    int end;
-    String state;
-    String user;
-    String activity;
-    public ClassroomPlan(String classroom, int start, int end, String state, String user) {
+    String deviceState;
+    List<Schedule> schedules=new ArrayList<>();
+
+    public ClassroomPlan(String classroom, String deviceState, List<Schedule> schedules) {
         this.classroom = classroom;
-        this.start = start;
-        this.end = end;
-        this.state = state;
-        this.user = user;
+        this.deviceState = deviceState;
+        this.schedules = schedules;
     }
 
-    public ClassroomPlan(String classroom, int start, int end, String state, String user, String activity) {
+    public ClassroomPlan(String classroom, String deviceState) {
         this.classroom = classroom;
-        this.start = start;
-        this.end = end;
-        this.state = state;
-        this.user = user;
-        this.activity = activity;
+        this.deviceState = deviceState;
     }
 
+    public ClassroomPlan(String classroom) {
+        this.classroom = classroom;
+    }
+
+    @JsonView(CommonView.class)
     public String getClassroom() {
         return classroom;
     }
-
     public void setClassroom(String classroom) {
         this.classroom = classroom;
     }
 
-    public int getStart() {
-        return start;
+
+    @JsonView(AdminView.class)
+    public String getDeviceState() {
+        return deviceState;
+    }
+    public void setDeviceState(String deviceState) {
+        this.deviceState = deviceState;
     }
 
-    public void setStart(int start) {
-        this.start = start;
+    @JsonView(CommonView.class)
+    public List<Schedule> getSchedules() {
+        return schedules;
     }
-
-    public int getEnd() {
-        return end;
-    }
-
-    public void setEnd(int end) {
-        this.end = end;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getActivity() {
-        return activity;
-    }
-
-    public void setActivity(String activity) {
-        this.activity = activity;
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
     }
 }

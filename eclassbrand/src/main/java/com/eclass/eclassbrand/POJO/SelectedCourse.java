@@ -23,13 +23,8 @@ public class SelectedCourse implements Serializable {
   private String tno;
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY,targetEntity = Course.class)
-<<<<<<< HEAD
-  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
-  @JsonIgnoreProperties(value = {"selectedCourses"})
-=======
   @JsonIgnoreProperties(value = { "selectedCourses" })
   @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
->>>>>>> b86dd0102bf780c3b53f50c917a98d1835cb013e
   private Course course;
 
   public Course getCourse() {

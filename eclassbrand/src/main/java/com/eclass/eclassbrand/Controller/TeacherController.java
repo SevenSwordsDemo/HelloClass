@@ -3,10 +3,12 @@ package com.eclass.eclassbrand.Controller;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.Apply;
+import com.eclass.eclassbrand.POJO.ClassroomPlan;
 import com.eclass.eclassbrand.Service.ApplyService;
 import com.eclass.eclassbrand.Service.ScheduleService;
 import com.eclass.eclassbrand.Service.TeacherService;
 import com.eclass.eclassbrand.Util;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,17 +54,16 @@ public class TeacherController {
     {
         CommonResult result = new CommonResult();
         result = scheduleService.findClassroomPlan(week,theday);
-
         return result;
     }
 
     //根据时间楼名返回教室安排
+    @JsonView(value =ClassroomPlan.CommonView.class)
     @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
     public CommonResult returnTheDayByBuild(int week,String theday,String build)
     {
-        CommonResult result = new CommonResult();
+        CommonResult result ;
         result =  scheduleService.findByBuild(week,theday,build);
-
         return result;
     }
 

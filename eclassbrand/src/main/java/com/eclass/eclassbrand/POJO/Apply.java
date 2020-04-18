@@ -17,7 +17,7 @@ public class Apply implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private BigInteger id;
+  private Long id;
   @Column(name="sid",nullable = false)
   private int sid;
   @Column(name="classroom",nullable = false)
@@ -49,11 +49,11 @@ public class Apply implements Serializable {
     this.student = student;
   }
 
-  public BigInteger getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(BigInteger id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

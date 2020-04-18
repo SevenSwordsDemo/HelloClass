@@ -21,11 +21,11 @@ public class Tuesday {
 
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "tno",insertable=false, updatable=false,referencedColumnName = "tno")
+  @JoinColumn(name = "tno",insertable=false, updatable=false,referencedColumnName = "tno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Teacher teacher;
 
   @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno")
+  @JoinColumn(name = "cno",insertable=false, updatable=false,referencedColumnName = "cno",foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
   private Course course;
 
   public Course getCourse() {
