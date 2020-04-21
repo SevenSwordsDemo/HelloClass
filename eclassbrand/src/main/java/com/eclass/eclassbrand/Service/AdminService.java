@@ -2,14 +2,13 @@ package com.eclass.eclassbrand.Service;
 
 import com.eclass.eclassbrand.DAO.AdminDAO;
 import com.eclass.eclassbrand.DAO.ApplyDAO;
+import com.eclass.eclassbrand.DAO.StudentDAO;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Administrator;
 import com.eclass.eclassbrand.POJO.Apply;
+import com.eclass.eclassbrand.POJO.Student;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +24,8 @@ public class AdminService {
     private AdminDAO adminDAO;
     @Resource
     private ApplyDAO applyDAO;
+    @Resource
+    private StudentDAO studentDAO;
 
     //添加管理员
     public CommonResult addAdmin(Administrator administrator)
@@ -86,5 +87,105 @@ public class AdminService {
         return result;
     }
 
+    //获取所有学生信息
+    public CommonResult getAllStudent(int page,int size)
+    {
+        CommonResult result=new CommonResult();
+        PageRequest pageRequest=PageRequest.of(page,size);
+        List<Student> students=null;
+        try {
+            Page<Student> studentPage = studentDAO.findAll(pageRequest);
+            students = studentPage.getContent();
+            if (students.size() > 0) {
+                result.setMsg("获取学生信息成功");
+                result.setData(students);
+            } else {
+                result.setResult("fail");
+                result.setMsg("暂无数据");
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            result.setStatus(500);
+            result.setResult("fail");
+            result.setMsg("服务器错误");
+        }
+        return result;
+
+    }
+
+    //获取所有学院列表
+    public CommonResult getAcademy()
+    {
+        CommonResult result=new CommonResult();
+        List<String> academies=studentDAO.getAcademy();
+        if(academies.size()>0)
+        {
+            result.setMsg("获取学院列表成功");
+            result.setData(academies);
+        }
+        else
+        {
+            result.setMsg("暂无数据");
+        }
+        return result;
+    }
+
+    //获取学院班级列表
+    public CommonResult getClassesAcademy(String academy)
+    {
+        CommonResult result=new CommonResult();
+        List<String> classes=studentDAO.getClassesByAcademy(academy);
+        if(classes.size()>0)
+        {
+            result.setMsg("获取班级列表成功");
+            result.setData(classes);
+        }
+        else
+            result.setMsg("暂无数据");
+        return result;
+    }
+
+
+    //分页获取某学院学生信息
+    public CommonResult getStudentsByAcademy(int page,int size,String academy)
+    {
+        CommonResult result=new CommonResult();
+        PageRequest pageRequest=PageRequest.of(page,size);
+        List<Student> students=null;
+        try {
+            Page<Student> studentPage = studentDAO.findAllByAcademy(academy, pageRequest);
+            students = studentPage.getContent();
+            if (students.size() > 0) {
+                result.setMsg("获取学生信息成功");
+                result.setData(students);
+            } else
+                result.setMsg("暂无数据");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            result.setResult("fail");
+            result.setStatus(500);
+            result.setMsg("服务器错误");
+        }
+        return result;
+    }
+
+    //根据学院班级获取学生信息
+    public CommonResult getStudentsOfClass(String academy,String classes)
+    {
+        CommonResult result=new CommonResult();
+        List<Student> students=studentDAO.findAllByAcademyAndClasses(academy,classes);
+        if(students.size()>0)
+        {
+            result.setMsg("获取学生信息成功");
+            result.setData(students);
+        }
+        else
+            result.setMsg("暂无数据");
+        return result;
+    }
 
 }

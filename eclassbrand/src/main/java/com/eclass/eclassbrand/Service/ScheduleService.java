@@ -4,6 +4,7 @@ import com.eclass.eclassbrand.DAO.*;
 import com.eclass.eclassbrand.Factory.FactoryOfDAOOfDay;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.*;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -117,16 +118,17 @@ public class ScheduleService {
     }
 
     //按时间楼名搜索安排
-    public CommonResult findByBuild(int week,String theday,String build){
-       return getSchedule(theday,week,build);
+    public CommonResult findByBuild(int week,String theday,String build,int page,int size){
+       return getSchedule(theday,week,build,page,size);
     }
 
-    private CommonResult getSchedule(String dayOfWeek,int week,String build)
+    private CommonResult getSchedule(String dayOfWeek,int week,String build,int page,int size)
     {
         CommonResult result=new CommonResult();
+        PageRequest pageRequest=PageRequest.of(page,size);
         try {
             BasicDAOOfDay basicDAOOfDay = factoryOfDAOOfDay.createDaoOfDay(dayOfWeek);
-            List<String> classrooms = basicDAOOfDay.getClassroom(build+"%", week);
+            List<String> classrooms = basicDAOOfDay.getClassroom(build+"%", week,pageRequest).getContent();
             List<ClassroomPlan> classroomPlans = new ArrayList<>();
             HashMap<String, Integer> classroomMap = new HashMap<>();
             if (classrooms.size() != 0) {

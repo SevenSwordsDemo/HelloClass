@@ -60,10 +60,10 @@ public class TeacherController {
     //根据时间楼名返回教室安排
     @JsonView(value =ClassroomPlan.CommonView.class)
     @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
-    public CommonResult returnTheDayByBuild(int week,String theday,String build)
+    public CommonResult returnTheDayByBuild(int week,String theday,String build,int page,int size)
     {
         CommonResult result ;
-        result =  scheduleService.findByBuild(week,theday,build);
+        result =  scheduleService.findByBuild(week,theday,build,page,size);
         return result;
     }
 

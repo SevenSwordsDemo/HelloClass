@@ -2,6 +2,8 @@ package com.eclass.eclassbrand.DAO;
 
 import com.eclass.eclassbrand.POJO.DayOfWeek;
 import com.eclass.eclassbrand.POJO.Friday;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +12,7 @@ import java.util.List;
 @Repository
 public interface BasicDAOOfDay {
     //查询该栋楼所有教室
-    List<String> getClassroom(String build,int week);
+    Page<String> getClassroom(String build, int week, Pageable pageable);
 
     //根据教楼名找安排
     List<DayOfWeek> findByClassroomLike(String classroom, int week );

@@ -2,11 +2,11 @@ package com.eclass.eclassbrand.DAO;
 
 import com.eclass.eclassbrand.POJO.DayOfWeek;
 import com.eclass.eclassbrand.POJO.Monday;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.SqlResultSetMapping;
 import java.util.List;
 
 @Repository
@@ -27,7 +27,7 @@ public interface MondayDAO extends JpaRepository<Monday, Long>, BasicDAOOfDay {
 
     //查询该栋楼所有教室
     @Query(value = "select distinct classroom from monday where classroom like ?1 and find_in_set(?2,week)",nativeQuery = true)
-    List<String> getClassroom(String build,int week);
+    Page<String> getClassroom(String build, int week, Pageable pageable);
 
     @Query(value = "select * from monday where classroom=?1 and find_in_set(?2,week)",nativeQuery = true)
     List<DayOfWeek> findAllByClassroom(String classroom,int week);
