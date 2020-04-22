@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="161a5294-9a9d-484e-a782-ddd8be33b92c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Factory/FactoryOfDAOOfDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Factory/FactoryOfDAOOfDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eclassbrand/target/" />
@@ -19,29 +22,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/SundayDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/ThursdayDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+            <state relative-caret-position="-851">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
+                <element signature="e#842#843#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
                 <element signature="method#getStudentsByAcademy#0;class#AdminController#0" />
               </folding>
             </state>
@@ -49,15 +36,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java">
+        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Monday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="529">
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Apply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="897">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+              <folding>
+                <element signature="e#511#521#0" />
+                <element signature="method#viewStudentPlan#0;class#ApplyService#0" />
+                <element signature="method#getApply#0;class#ApplyService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+              <folding>
+                <element signature="e#2104#2105#0" expanded="true" />
+                <element signature="e#2149#2150#0" expanded="true" />
+                <element signature="e#2231#2232#0" expanded="true" />
+                <element signature="e#2280#2281#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#2401#2402#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/ApplyDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
@@ -69,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="782">
+              <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
               <folding>
                 <element signature="method#addAdmin#0;class#AdminService#0" />
                 <element signature="method#delAdmin#0;class#AdminService#0" />
@@ -79,6 +106,7 @@
                 <element signature="method#getAcademy#0;class#AdminService#0" />
                 <element signature="method#getClassesAcademy#0;class#AdminService#0" />
                 <element signature="method#getStudentsByAcademy#0;class#AdminService#0" />
+                <element signature="method#getStudentsOfClass#0;class#AdminService#0" />
               </folding>
             </state>
           </provider>
@@ -87,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="253">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +136,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Factory/FactoryOfDAOOfDay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="713">
               <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -150,7 +178,6 @@
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/SelectedCourse.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Sunday.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Wednesday.java" />
-        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Schedule.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Interface/DAOForDay.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/basicDAOOfDay.java" />
@@ -162,7 +189,6 @@
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/TeacherView.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Monday.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/CourseDAO.java" />
-        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/DayOfWeek.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/ClassroomPlan.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/ClassroomDAO.java" />
@@ -180,11 +206,13 @@
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/TuesdayDAO.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/WednesdayDAO.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/LoginService.java" />
-        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/ApplyDAO.java" />
-        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Factory/FactoryOfDAOOfDay.java" />
+        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java" />
         <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java" />
+        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java" />
+        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" />
       </list>
     </option>
   </component>
@@ -334,8 +362,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -403,12 +431,13 @@
       <workItem from="1587524876980" duration="151000" />
       <workItem from="1587525385582" duration="975000" />
       <workItem from="1587536641866" duration="589000" />
-      <workItem from="1587537835836" duration="713000" />
+      <workItem from="1587537835836" duration="5304000" />
+      <workItem from="1587562996929" duration="1798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60965000" />
+    <option name="totallyTimeSpent" value="67354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -424,7 +453,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6131148" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.07540984" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -585,39 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Monday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="e#1541#1542#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="e#1620#1621#0" expanded="true" />
-            <element signature="e#1649#1650#0" expanded="true" />
-            <element signature="e#1669#1670#0" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#1728#1729#0" expanded="true" />
-            <element signature="e#1756#1757#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1814#1815#0" expanded="true" />
-            <element signature="e#1842#1843#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1887#1888#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2030#2031#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-            <element signature="e#2116#2117#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2200#2201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Friday.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -650,18 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="e#2149#2150#0" expanded="true" />
-            <element signature="e#2280#2281#0" expanded="true" />
-            <element signature="e#2401#2402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/DayOfWeek.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -676,13 +660,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Apply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -813,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="65" column="73" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/DAO/FridayDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -872,39 +842,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-          <folding>
-            <element signature="method#getStudentsByAcademy#0;class#AdminController#0" />
-          </folding>
+        <state relative-caret-position="989">
+          <caret line="62" column="98" selection-start-line="62" selection-start-column="98" selection-end-line="62" selection-end-column="98" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java">
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Monday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="method#addAdmin#0;class#AdminService#0" />
-            <element signature="method#delAdmin#0;class#AdminService#0" />
-            <element signature="method#handleApply#0;class#AdminService#0" />
-            <element signature="method#getAllStudent#0;class#AdminService#0" />
-            <element signature="method#getAcademy#0;class#AdminService#0" />
-            <element signature="method#getClassesAcademy#0;class#AdminService#0" />
-            <element signature="method#getStudentsByAcademy#0;class#AdminService#0" />
-          </folding>
+        <state relative-caret-position="529">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java">
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Apply.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="897">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -917,7 +872,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Factory/FactoryOfDAOOfDay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="713">
           <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -926,10 +881,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java">
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+        <state relative-caret-position="100">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding>
+            <element signature="e#2104#2105#0" expanded="true" />
+            <element signature="e#2149#2150#0" expanded="true" />
+            <element signature="e#2231#2232#0" expanded="true" />
+            <element signature="e#2280#2281#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#2401#2402#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -937,6 +900,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Modal/CommonResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="method#getStudentsByAcademy#0;class#AdminController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
+          <folding>
+            <element signature="method#addAdmin#0;class#AdminService#0" />
+            <element signature="method#delAdmin#0;class#AdminService#0" />
+            <element signature="method#handleApply#0;class#AdminService#0" />
+            <element signature="method#getAllStudent#0;class#AdminService#0" />
+            <element signature="method#getAcademy#0;class#AdminService#0" />
+            <element signature="method#getClassesAcademy#0;class#AdminService#0" />
+            <element signature="method#getStudentsByAcademy#0;class#AdminService#0" />
+            <element signature="method#getStudentsOfClass#0;class#AdminService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/ApplyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="e#511#521#0" />
+            <element signature="method#viewStudentPlan#0;class#ApplyService#0" />
+            <element signature="method#getApply#0;class#ApplyService#0" />
+          </folding>
         </state>
       </provider>
     </entry>

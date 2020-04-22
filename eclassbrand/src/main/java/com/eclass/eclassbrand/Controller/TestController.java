@@ -1,14 +1,18 @@
 package com.eclass.eclassbrand.Controller;
 
 
+import com.eclass.eclassbrand.DAO.ApplyDAO;
 import com.eclass.eclassbrand.DAO.CourseDAO;
 import com.eclass.eclassbrand.DAO.MondayDAO;
 import com.eclass.eclassbrand.DAO.TeacherDAO;
 import com.eclass.eclassbrand.Factory.FactoryOfDAOOfDay;
 import com.eclass.eclassbrand.Modal.CommonResult;
+import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.POJO.DayOfWeek;
 import com.eclass.eclassbrand.POJO.Monday;
 import com.eclass.eclassbrand.Service.TestService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,32 +31,17 @@ public class TestController {
     TeacherDAO teacherDAO;
     @Resource
     CourseDAO courseDAO;
+    @Resource
+    ApplyDAO applyDAO;
 
     @Resource
     private FactoryOfDAOOfDay factoryOfDAOOfDay;
     @RequestMapping(value = "test",method = RequestMethod.GET)
-    public CommonResult test()
+    public Page<Apply> test(int page,int size)
     {
-        CommonResult result=new CommonResult();
-//        BasicDAOOfDay basicDAOOfDay=factoryOfDAOOfDay.createDaoOfDay("Monday");
-//       result.setData(basicDAOOfDay.getClassroom("广知楼%",2));
-        List<DayOfWeek> dayOfWeeks=mondayDAO.findAllByClassroom("广知楼A101",2);
-        if(dayOfWeeks.size()==0)
-        {
-            System.out.println("000000000000000");
-        }
-        else {
-            for (DayOfWeek dayOfWeek : dayOfWeeks) {
-               // System.out.println("Teacher name:" + dayOfWeek.getTeacher().getName());
-                String tName=teacherDAO.findByTno(dayOfWeek.getTno()).getName();
-                String cName=courseDAO.findByCno(dayOfWeek.getCno()).getCname();
-                System.out.println("tName:"+tName);
-                System.out.println("cName:"+cName);
-                System.out.println("Type:" + dayOfWeek.getClass());
-            }
-        }
-        result.setData(dayOfWeeks);
-       return result;
+        PageRequest pageRequest=PageRequest.of(page,size);
+        Page<Apply> a=applyDAO.findByState("待审核",pageRequest);
+        return a;
     }
 
     @RequestMapping("addApply")

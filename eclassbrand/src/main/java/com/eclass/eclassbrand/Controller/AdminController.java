@@ -24,6 +24,7 @@ public class AdminController {
 
     //获取申请纪录
     @RequestMapping(value = "/getApply",method = RequestMethod.GET)
+
     public CommonResult getApply(int page,int size)
     {
         return applyService.getApply(page,size);

@@ -94,6 +94,7 @@ public class AdminService {
             students = studentPage.getContent();
             if (students.size() > 0) {
                 result.setMsg("获取学生信息成功");
+                result.setLengthOfData(studentPage.getTotalElements());
                 result.setData(students);
             } else {
                 result.setResult("fail");
@@ -120,6 +121,7 @@ public class AdminService {
         {
             result.setMsg("获取学院列表成功");
             result.setData(academies);
+            result.setLengthOfData(academies.size());
         }
         else
         {
@@ -137,6 +139,7 @@ public class AdminService {
         {
             result.setMsg("获取班级列表成功");
             result.setData(classes);
+            result.setLengthOfData(classes.size());
         }
         else
             result.setMsg("暂无数据");
@@ -156,6 +159,7 @@ public class AdminService {
             if (students.size() > 0) {
                 result.setMsg("获取学生信息成功");
                 result.setData(students);
+                result.setLengthOfData(studentPage.getTotalElements());
             } else
                 result.setMsg("暂无数据");
         }
@@ -178,6 +182,7 @@ public class AdminService {
         {
             result.setMsg("获取学生信息成功");
             result.setData(students);
+            result.setLengthOfData(students.size());
         }
         else
             result.setMsg("暂无数据");

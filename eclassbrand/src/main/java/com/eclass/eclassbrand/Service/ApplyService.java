@@ -5,6 +5,7 @@ import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.POJO.SelectedCourse;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +29,16 @@ public class ApplyService {
         return applies;
     }
 
-
     //获取申请纪录
     public CommonResult getApply(int page,int size)
     {
         CommonResult result=new CommonResult();
         PageRequest pageRequest=PageRequest.of(page,size);
-        List<Apply> applies=applyDAO.findByState("待审核",pageRequest).getContent();
+        Page<Apply> a=applyDAO.findByState("待审核",pageRequest);
+        List<Apply> applies=a.getContent();
+        System.out.println("ApplySize:"+applies.size());
+        for(Apply apply:applies)
+            System.out.println("APPPPPP:"+apply.getReason());
         if(applies.size()==0)
         {
             result.setStatus(201);
@@ -46,6 +50,7 @@ public class ApplyService {
             result.setStatus(200);
             result.setResult("success");
             result.setMsg("成功获取纪录");
+            result.setLengthOfData(a.getTotalElements());
             result.setData(applies);
         }
         return result;

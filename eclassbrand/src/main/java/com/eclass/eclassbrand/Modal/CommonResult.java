@@ -9,10 +9,12 @@ public class CommonResult implements Serializable {
 
     private static final long serialVersionUID = -6721531401750654362L;
     public interface CommonResultView{};
+
     private int status;//状态码
     private String result;//接口调用结果
     private String msg;//备注信息
     private Object data;//返回数据
+    private long lengthOfData;
 
     public CommonResult() {
         status=200;
@@ -50,5 +52,13 @@ public class CommonResult implements Serializable {
     }
     public void setData(Object data) {
         this.data = data;
+    }
+
+
+    public long getLengthOfData() {
+        return lengthOfData;
+    }
+    public void setLengthOfData(long lengthOfData) {
+        this.lengthOfData = lengthOfData;
     }
 }

@@ -40,6 +40,7 @@ public class ScheduleService {
         {
             result.setMsg("获取楼层信息成功");
             result.setData(floors);
+            result.setLengthOfData(floors.size());
         }
         return result;
     }
@@ -58,8 +59,8 @@ public class ScheduleService {
         {
             result.setMsg("获取教室列表成功");
             result.setData(roomNumbers);
+            result.setLengthOfData(roomNumbers.size());
         }
-       result.setData(roomNumbers);
         return result;
     }
 
@@ -103,6 +104,7 @@ public class ScheduleService {
                 if (applies.size() == 0 && scheduleList.size() == 0)
                     result.setMsg("暂无日程");
                 result.setData(classroomPlans);
+                result.setLengthOfData(classroomPlans.size());
                 result.setMsg("获取日程成功");
             } else
                 result.setMsg("暂无数据");
@@ -164,6 +166,7 @@ public class ScheduleService {
                 if (scheduleList.size() == 0 && applies.size() == 0)
                     result.setMsg("暂无日程");
                 result.setData(classroomPlans);
+                result.setLengthOfData(classroomPlans.size());
                 result.setMsg("获取日程成功");
             }
             else
