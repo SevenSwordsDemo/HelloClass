@@ -5,6 +5,7 @@ import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.Modal.Variable;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.POJO.SelectedCourse;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,10 +30,11 @@ public class ApplyService {
 
 
     //获取申请纪录
-    public CommonResult getApply()
+    public CommonResult getApply(int page,int size)
     {
         CommonResult result=new CommonResult();
-        List<Apply> applies=applyDAO.findByState("待审核");
+        PageRequest pageRequest=PageRequest.of(page,size);
+        List<Apply> applies=applyDAO.findByState("待审核",pageRequest).getContent();
         if(applies.size()==0)
         {
             result.setStatus(200);

@@ -7,16 +7,12 @@ import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Administrator;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.POJO.Student;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
-import java.math.BigInteger;
-import java.net.ConnectException;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class AdminService {

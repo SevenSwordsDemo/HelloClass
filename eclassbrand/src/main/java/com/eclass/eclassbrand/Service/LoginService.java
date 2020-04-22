@@ -41,6 +41,7 @@ public class LoginService {
                 Student student=sLoginCheck(account,password);
                 if(student==null)
                 {
+                    result.setStatus(201);
                     result.setResult("fail");
                     result.setMsg("账号或密码错误");
                 }
@@ -53,6 +54,7 @@ public class LoginService {
                 Teacher teacher=tLoginCheck(account,password);
                 if(teacher==null)
                 {
+                    result.setStatus(201);
                     result.setResult("fail");
                     result.setMsg("账号或密码错误");
                 }
@@ -65,6 +67,7 @@ public class LoginService {
                 Administrator administrator=aLoginCheck(account,password);
                 if(administrator==null)
                 {
+                    result.setStatus(201);
                     result.setResult("fail");
                     result.setMsg("账号或密码错误");
                 }
