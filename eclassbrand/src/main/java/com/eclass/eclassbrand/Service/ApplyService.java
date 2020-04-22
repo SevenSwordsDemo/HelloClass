@@ -37,7 +37,7 @@ public class ApplyService {
         List<Apply> applies=applyDAO.findByState("待审核",pageRequest).getContent();
         if(applies.size()==0)
         {
-            result.setStatus(200);
+            result.setStatus(201);
             result.setMsg("暂无申请");
             result.setResult("success");
         }

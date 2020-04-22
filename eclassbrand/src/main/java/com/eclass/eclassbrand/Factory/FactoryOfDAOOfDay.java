@@ -24,7 +24,7 @@ public class FactoryOfDAOOfDay {
     @Resource
     SundayDAO sundayDAO;
 
-//    private List<Mon>
+
 
     public BasicDAOOfDay createDaoOfDay(String day)
     {
@@ -49,7 +49,7 @@ public class FactoryOfDAOOfDay {
 
     }
 
-//    public List<>
+
 
 
 }
