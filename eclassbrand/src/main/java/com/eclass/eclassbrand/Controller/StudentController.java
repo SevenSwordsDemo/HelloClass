@@ -3,10 +3,8 @@ package com.eclass.eclassbrand.Controller;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Apply;
 import com.eclass.eclassbrand.Service.StudentService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.fasterxml.jackson.annotation.JsonView;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -25,12 +23,19 @@ public class StudentController {
     StudentService studentService;
 
     //申请教室
-    @RequestMapping(value = "/apply",method = RequestMethod.POST)
-    public void setApply(Apply apply)
+    @RequestMapping(value = "/apply")
+    public CommonResult setApply(@RequestBody Apply apply)
     {
-        studentService.saveApplyRecord(apply);
+        return studentService.saveApplyRecord(apply);
     }
 
+    //查看预约记录
+    @JsonView({Apply.SimpleView.class})
+    @RequestMapping(value = "/viewStudentApply")
+    public CommonResult viewApply(int sid)
+    {
+        return studentService.getRecord(sid);
+    }
 
     private void sendResponse(HttpServletResponse response, String responseText)
             throws ServletException, IOException {

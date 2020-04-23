@@ -1,10 +1,7 @@
 package com.eclass.eclassbrand.Controller;
 
 
-import com.eclass.eclassbrand.DAO.ApplyDAO;
-import com.eclass.eclassbrand.DAO.CourseDAO;
-import com.eclass.eclassbrand.DAO.MondayDAO;
-import com.eclass.eclassbrand.DAO.TeacherDAO;
+import com.eclass.eclassbrand.DAO.*;
 import com.eclass.eclassbrand.Factory.FactoryOfDAOOfDay;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Apply;
@@ -18,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -60,5 +59,23 @@ public class TestController {
     public Monday getThursday()
     {
         return testService.getMonday();
+    }
+
+    @RequestMapping("/applyClassroom")
+    public CommonResult applyClassroom()
+    {
+        CommonResult result = new CommonResult();
+        Date date = new Date(System.currentTimeMillis());
+        String timeStr = "2010-06-23 13:18:33.112233";
+        Timestamp ts = Timestamp.valueOf(timeStr);
+        Apply apply = new Apply(1,"广知A101",1,2,"审核中","xxx",ts,"Monday",date,1);
+        try {
+            applyDAO.save(apply);
+            result.setResult("插入成功");
+        }catch (Exception e){
+            result.setResult("插入失败");
+            e.printStackTrace();
+        }
+        return result;
     }
 }
