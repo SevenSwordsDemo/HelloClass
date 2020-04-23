@@ -3,6 +3,9 @@ package com.eclass.eclassbrand.Controller;
 import com.eclass.eclassbrand.Modal.CommonResult;
 import com.eclass.eclassbrand.POJO.Administrator;
 import com.eclass.eclassbrand.POJO.ClassroomPlan;
+import com.eclass.eclassbrand.ParamModal.GetScheduleOfClassParam;
+import com.eclass.eclassbrand.ParamModal.GetScheduleParam;
+import com.eclass.eclassbrand.ParamModal.GetStudentsParam;
 import com.eclass.eclassbrand.Service.AdminService;
 import com.eclass.eclassbrand.Service.ApplyService;
 import com.eclass.eclassbrand.Service.ScheduleService;
@@ -61,8 +64,13 @@ public class AdminController {
     //按楼名获取当日日程安排
     @RequestMapping(value = "/getSchedule",method = RequestMethod.POST)
     @JsonView(value = ClassroomPlan.AdminView.class)
-    public CommonResult getSchedule(Integer week,String theday,String build,Integer page,Integer size )
+    public CommonResult getSchedule(GetScheduleParam getScheduleParam)
     {
+        Integer week=getScheduleParam.getWeek();
+        String theday=getScheduleParam.getTheday();
+        String build=getScheduleParam.getBuild();
+        Integer page=getScheduleParam.getPage();
+        Integer size=getScheduleParam.getSize();
         return scheduleService.findByBuild(week,theday,build,page,size);
     }
 
@@ -77,8 +85,11 @@ public class AdminController {
     //获取某教室当天日程
     @RequestMapping(value = "/getScheduleOfClass",method = RequestMethod.POST)
     @JsonView(value = ClassroomPlan.AdminView.class)
-    public CommonResult getScheduleOfClass(int week,String dayOfWeek,String classroom)
+    public CommonResult getScheduleOfClass(GetScheduleOfClassParam getScheduleOfClassParam)
     {
+        Integer week=getScheduleOfClassParam.getWeek();
+        String dayOfWeek=getScheduleOfClassParam.getDayOfWeek();
+        String classroom=getScheduleOfClassParam.getClassroom();
         return scheduleService.getScheduleOfDayOfClass(week,dayOfWeek,classroom);
     }
 
@@ -105,8 +116,11 @@ public class AdminController {
 
     //分页获取某学院学生信息
     @RequestMapping(value = "/getStudentsByAcademy",method = RequestMethod.POST)
-    public CommonResult getStudentsByAcademy(Integer page,Integer size,String academy)
+    public CommonResult getStudentsByAcademy(GetStudentsParam getStudentsParam)
     {
+        Integer page=getStudentsParam.getPage();
+        Integer size=getStudentsParam.getSize();
+        String academy=getStudentsParam.getAcademy();
         return adminService.getStudentsByAcademy(page,size,academy);
     }
 
