@@ -25,7 +25,7 @@ public class AdminController {
     //获取申请纪录
     @RequestMapping(value = "/getApply",method = RequestMethod.GET)
 
-    public CommonResult getApply(int page,int size)
+    public CommonResult getApply(Integer page,Integer size)
     {
         return applyService.getApply(page,size);
     }
@@ -61,7 +61,7 @@ public class AdminController {
     //按楼名获取当日日程安排
     @RequestMapping(value = "/getSchedule",method = RequestMethod.POST)
     @JsonView(value = ClassroomPlan.AdminView.class)
-    public CommonResult getSchedule(int week,String theday,String build,int page,int size )
+    public CommonResult getSchedule(Integer week,String theday,String build,Integer page,Integer size )
     {
         return scheduleService.findByBuild(week,theday,build,page,size);
     }
@@ -84,7 +84,7 @@ public class AdminController {
 
     //获取所有学生信息
     @RequestMapping(value = "/getAllStudent",method = RequestMethod.GET)
-    public CommonResult getAllStudent(int page,int size)
+    public CommonResult getAllStudent(Integer page,Integer size)
     {
         return adminService.getAllStudent(page,size);
     }
@@ -105,7 +105,7 @@ public class AdminController {
 
     //分页获取某学院学生信息
     @RequestMapping(value = "/getStudentsByAcademy",method = RequestMethod.POST)
-    public CommonResult getStudentsByAcademy(int page,int size,String academy)
+    public CommonResult getStudentsByAcademy(Integer page,Integer size,String academy)
     {
         return adminService.getStudentsByAcademy(page,size,academy);
     }

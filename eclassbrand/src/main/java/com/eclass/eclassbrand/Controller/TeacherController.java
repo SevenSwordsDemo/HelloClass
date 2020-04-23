@@ -42,7 +42,7 @@ public class TeacherController {
 
     //签到查询
     @RequestMapping(value = "/signIn",method = RequestMethod.POST)
-    public CommonResult viewSignin(String tno,int week,String dayofweek)
+    public CommonResult viewSignin(String tno,Integer week,String dayofweek)
     {
         return teacherService.viewSignin(tno,week,dayofweek);
     }
@@ -50,7 +50,7 @@ public class TeacherController {
 
     //根据时间返回当天教室情况安排
     @RequestMapping(value = "/theDayPlans",method = {RequestMethod.GET, RequestMethod.POST})
-    public CommonResult returnTheDay(int week,String theday)
+    public CommonResult returnTheDay(Integer week,String theday)
     {
         CommonResult result = new CommonResult();
         result = scheduleService.findClassroomPlan(week,theday);
@@ -60,7 +60,7 @@ public class TeacherController {
     //根据时间楼名返回教室安排
     @JsonView(value =ClassroomPlan.CommonView.class)
     @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
-    public CommonResult returnTheDayByBuild(int week,String theday,String build,int page,int size)
+    public CommonResult returnTheDayByBuild(int week,String theday,String build,Integer page,Integer size)
     {
         CommonResult result ;
         result =  scheduleService.findByBuild(week,theday,build,page,size);
