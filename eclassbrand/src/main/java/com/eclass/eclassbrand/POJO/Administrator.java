@@ -15,15 +15,16 @@ public class Administrator implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String account;
+    @Column(name = "password")
     @JsonIgnore
-    private String password;
+    private String pwd;
 
     public Administrator() {
     }
 
-    public Administrator(String account, String password) {
+    public Administrator(String account, String pwd) {
         this.account = account;
-        this.password = password;
+        this.pwd = pwd;
     }
 
     public String getAccount() {
@@ -34,12 +35,12 @@ public class Administrator implements Serializable {
         this.account = account;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public long getId() {

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="161a5294-9a9d-484e-a782-ddd8be33b92c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Service/AdminService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eclassbrand/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+            <state relative-caret-position="368">
+              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
               <folding>
                 <element signature="e#1598#1599#0" expanded="true" />
                 <element signature="e#1632#1633#0" expanded="true" />
@@ -48,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
@@ -101,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="368">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -110,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Apply.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="1771">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -438,12 +436,12 @@
       <workItem from="1587607559128" duration="392000" />
       <workItem from="1587620149713" duration="686000" />
       <workItem from="1587630180437" duration="3524000" />
-      <workItem from="1587693253027" duration="1554000" />
+      <workItem from="1587693253027" duration="3365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74600000" />
+    <option name="totallyTimeSpent" value="76411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -459,7 +457,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13278688" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13278688" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -872,15 +870,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="368">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/Apply.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="1771">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
@@ -922,20 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
-          <folding>
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="method#handleApply#0;class#AdminController#0" />
-            <element signature="method#getScheduleOfClass#0;class#AdminController#0" />
-            <element signature="method#getStudentsByAcademy#0;class#AdminController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/POJO/ClassroomPlan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -955,6 +939,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Schedule#0;class#Schedule#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eclassbrand/src/main/java/com/eclass/eclassbrand/Controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding>
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="method#handleApply#0;class#AdminController#0" />
+            <element signature="method#getScheduleOfClass#0;class#AdminController#0" />
+            <element signature="method#getStudentsByAcademy#0;class#AdminController#0" />
           </folding>
         </state>
       </provider>
