@@ -30,5 +30,8 @@ public interface ApplyDAO extends JpaRepository<Apply, Long> {
     @Query(value = "select * from apply where week=?1 and day_of_week=?2 and classroom=?3", nativeQuery = true)
     List<Apply> findApplyOfDay(int week,String dayOfWeek,String classroom);
 
+    @Query(value = "select * from apply where sid=?1", nativeQuery = true)
+    List<Apply> findBySid(int sid);
+
 
 }

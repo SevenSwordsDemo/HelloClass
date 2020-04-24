@@ -2,6 +2,7 @@ package com.eclass.eclassbrand.POJO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -43,13 +44,14 @@ public class Student implements Serializable {
     private List<Apply> applyList;
 
 
+    @JsonView(Apply.DetailView.class)
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
     }
-
+    @JsonView(Apply.DetailView.class)
     public String getSno() {
         return sno;
     }
@@ -58,6 +60,7 @@ public class Student implements Serializable {
         this.sno = sno;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getPassword() {
         return password;
     }
@@ -66,6 +69,7 @@ public class Student implements Serializable {
         this.password = password;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getName() {
         return name;
     }
@@ -74,6 +78,7 @@ public class Student implements Serializable {
         this.name = name;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getAcademy() {
         return academy;
     }
@@ -82,6 +87,7 @@ public class Student implements Serializable {
         this.academy = academy;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getClasses() {
         return classes;
     }
@@ -90,6 +96,7 @@ public class Student implements Serializable {
         this.classes = classes;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getGender() {
         return gender;
     }
@@ -98,6 +105,7 @@ public class Student implements Serializable {
         this.gender = gender;
     }
 
+    @JsonView(Apply.DetailView.class)
     public String getFaceInfo() {
         return faceInfo;
     }
@@ -106,6 +114,7 @@ public class Student implements Serializable {
         this.faceInfo = faceInfo;
     }
 
+    @JsonView(Apply.DetailView.class)
     public List<Apply> getApplyList() {
         return applyList;
     }
