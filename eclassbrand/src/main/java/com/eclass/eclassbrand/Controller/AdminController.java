@@ -47,6 +47,14 @@ public class AdminController {
         return scheduleService.getClassroom(floor);
     }
 
+
+    //获取管理员列表
+    @RequestMapping(value = "/getAdminList",method = RequestMethod.GET)
+    public CommonResult getAdminList()
+    {
+        return adminService.getAdminList();
+    }
+
     //增加管理员
     @RequestMapping(value = "/addAdmin",method = RequestMethod.POST)
     public CommonResult addAdmin(Administrator administrator)

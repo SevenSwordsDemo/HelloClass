@@ -23,6 +23,28 @@ public class AdminService {
     @Resource
     private StudentDAO studentDAO;
 
+
+
+    //获取管理员列表
+    public CommonResult getAdminList()
+    {
+        CommonResult result=new CommonResult();
+        List<Administrator> administrators=adminDAO.findAll();
+        if(administrators.size()>0)
+        {
+            result.setMsg("获取管理员列表成功");
+            result.setData(administrators);
+            result.setLengthOfData(administrators.size());
+        }
+        else
+        {
+            result.setMsg("暂无数据");
+            result.setResult("fail");
+            result.setStatus(201);
+        }
+        return result;
+    }
+
     //添加管理员
     public CommonResult addAdmin(Administrator administrator)
     {
