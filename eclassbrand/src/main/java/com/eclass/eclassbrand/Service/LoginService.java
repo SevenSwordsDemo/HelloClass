@@ -82,7 +82,7 @@ public class LoginService {
     private Administrator aLoginCheck(String account,String password)
     {
         Administrator a = adminDAO.findByAccount(account);
-        if(a!=null&&a.getPassword().equals(password))
+        if(a!=null&&a.getPwd().equals(password))
             return a;
         else
             return null;
