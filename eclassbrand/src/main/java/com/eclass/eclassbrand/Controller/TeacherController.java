@@ -21,6 +21,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static java.sql.Types.NULL;
+
 @RestController
 @RequestMapping(value = {"/teacher"})
 public class TeacherController {
@@ -60,9 +62,12 @@ public class TeacherController {
     //根据时间楼名返回教室安排
     @JsonView(value =ClassroomPlan.CommonView.class)
     @RequestMapping(value = "/theDayPlansByBuild",method = RequestMethod.POST)
-    public CommonResult returnTheDayByBuild(int week,String theday,String build,Integer page,Integer size)
+    public CommonResult returnTheDayByBuild(Integer week,String theday,String build,Integer page,Integer size)
     {
         CommonResult result ;
+        if(week == NULL){
+            week = Variable.getWeek();
+        }
         result =  scheduleService.findByBuild(week,theday,build,page,size);
         return result;
     }

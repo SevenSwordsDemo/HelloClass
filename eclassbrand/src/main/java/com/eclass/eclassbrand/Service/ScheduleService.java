@@ -95,6 +95,7 @@ public class ScheduleService {
                 if (scheduleList.size() != 0) {
                     for (DayOfWeek day : scheduleList) {
                         int index = hashMap.get(day.getClassroom());
+                        System.out.println(day.getTno());
                         String tName = teacherDAO.findByTno(day.getTno()).getName();
                         String cName = courseDAO.findByCno(day.getCno()).getCname();
                         Schedule schedule = new Schedule(day.getStart(), day.getEnd(), "已预约使用", tName, cName);
@@ -120,11 +121,11 @@ public class ScheduleService {
     }
 
     //按时间楼名搜索安排
-    public CommonResult findByBuild(int week,String theday,String build,int page,int size){
+    public CommonResult findByBuild(Integer week,String theday,String build,int page,int size){
        return getSchedule(theday,week,build,page,size);
     }
 
-    private CommonResult getSchedule(String dayOfWeek,int week,String build,int page,int size)
+    private CommonResult getSchedule(String dayOfWeek,Integer week,String build,int page,int size)
     {
         CommonResult result=new CommonResult();
         PageRequest pageRequest=PageRequest.of(page,size);

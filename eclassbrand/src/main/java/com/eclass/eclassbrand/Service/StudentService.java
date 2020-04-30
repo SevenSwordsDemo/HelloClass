@@ -18,11 +18,11 @@ public class StudentService {
         CommonResult result = new CommonResult();
         try {
             applyDAO.save(apply);
-            result.setMsg("获取任课成功");
+            result.setMsg("申请成功");
             result.setResult("success");
         }catch (Exception e){
             result.setStatus(500);
-            result.setMsg("获取任课失败");
+            result.setMsg("申请失败");
             result.setResult("fail");
             e.printStackTrace();
         }

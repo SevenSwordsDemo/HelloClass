@@ -1,7 +1,7 @@
 package com.eclass.eclassbrand.Modal;
 
 public class Variable {
-    private static int week;
+    private static int week = 1;
 
     public static int getWeek() {
         return week;
