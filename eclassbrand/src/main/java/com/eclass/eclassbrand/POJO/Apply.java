@@ -25,8 +25,8 @@ public class Apply implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  @Column(name="sno",nullable = false)
-  private String sno;
+  @Column(name="sid",nullable = false)
+  private String sid;
   @Column(name="classroom",nullable = false)
   private String classroom;
   private int start;
@@ -49,8 +49,8 @@ public class Apply implements Serializable {
   public Apply() {
   }
 
-  public Apply(String sno, String classroom, int start, int end, String state, String reason, Timestamp applyTime, String dayOfWeek, Date date, Integer week) {
-    this.sno = sno;
+  public Apply(String sid, String classroom, int start, int end, String state, String reason, Timestamp applyTime, String dayOfWeek, Date date, Integer week) {
+    this.sid = sid;
     this.classroom = classroom;
     this.start = start;
     this.end = end;
@@ -86,12 +86,12 @@ public class Apply implements Serializable {
   }
 
   @JsonView(SimpleView.class)
-  public String getSno() {
-    return sno;
+  public String getSid() {
+    return sid;
   }
 
-  public void setSno(String sno) {
-    this.sno = sno;
+  public void setSid(String sid) {
+    this.sid = sid;
   }
 
   @JsonView(SimpleView.class)
