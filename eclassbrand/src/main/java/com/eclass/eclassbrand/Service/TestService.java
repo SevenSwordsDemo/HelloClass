@@ -61,7 +61,7 @@ public class TestService {
         apply.setWeek(3);
         apply.setState("待审核");
         apply.setReason("志协社团会议");
-        apply.setSid("123");
+        apply.setSid(1);
         result.setData(applyDAO.save(apply));
         result.setMsg("信息添加成功");
         }

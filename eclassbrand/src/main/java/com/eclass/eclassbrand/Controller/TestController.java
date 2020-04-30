@@ -68,7 +68,7 @@ public class TestController {
         Date date = new Date(System.currentTimeMillis());
         String timeStr = "2010-06-23 13:18:33.112233";
         Timestamp ts = Timestamp.valueOf(timeStr);
-        Apply apply = new Apply("123","广知A101",1,2,"审核中","xxx",ts,"Monday",date,1);
+        Apply apply = new Apply(1,"广知A101",1,2,"审核中","xxx",ts,"Monday",date,1);
         try {
             applyDAO.save(apply);
             result.setResult("插入成功");
