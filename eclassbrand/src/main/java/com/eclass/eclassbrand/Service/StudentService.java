@@ -16,6 +16,7 @@ public class StudentService {
     //保存申请记录
     public CommonResult saveApplyRecord(Apply apply){
         CommonResult result = new CommonResult();
+        apply.setState("待审核");
         try {
             applyDAO.save(apply);
             result.setMsg("申请成功");
