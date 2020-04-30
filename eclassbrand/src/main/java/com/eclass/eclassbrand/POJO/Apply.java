@@ -90,7 +90,7 @@ public class Apply implements Serializable {
     return sno;
   }
 
-  public void setSid(String sno) {
+  public void setSno(String sno) {
     this.sno = sno;
   }
 
