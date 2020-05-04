@@ -55,6 +55,8 @@ public class TeacherController {
     public CommonResult returnTheDay(Integer week,String theday)
     {
         CommonResult result = new CommonResult();
+        if(week==null || week==0) week = Variable.getWeek();
+        if(theday==null) theday = Util.getWeekOfDate(new Date());
         result = scheduleService.findClassroomPlan(week,theday);
         return result;
     }
@@ -68,6 +70,8 @@ public class TeacherController {
         if(week == NULL){
             week = Variable.getWeek();
         }
+        if(theday==null)
+            theday = Util.getWeekOfDate(new Date());
         result =  scheduleService.findByBuild(week,theday,build,page,size);
         return result;
     }
